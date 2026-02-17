@@ -1,0 +1,14 @@
+C:\code\TesteJogoTexto\bin\Debug\net10.0\TesteJogoTexto.exe
+C:\code\TesteJogoTexto\bin\Debug\net10.0\TesteJogoTexto.deps.json
+C:\code\TesteJogoTexto\bin\Debug\net10.0\TesteJogoTexto.runtimeconfig.json
+C:\code\TesteJogoTexto\bin\Debug\net10.0\TesteJogoTexto.dll
+C:\code\TesteJogoTexto\bin\Debug\net10.0\TesteJogoTexto.pdb
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.AssemblyInfoInputs.cache
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.AssemblyInfo.cs
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.csproj.CoreCompileInputs.cache
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.dll
+C:\code\TesteJogoTexto\obj\Debug\net10.0\refint\TesteJogoTexto.dll
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.pdb
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.genruntimeconfig.cache
+C:\code\TesteJogoTexto\obj\Debug\net10.0\ref\TesteJogoTexto.dll
