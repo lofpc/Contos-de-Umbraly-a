@@ -12,3 +12,4 @@ C:\code\TesteJogoTexto\obj\Debug\net10.0\refint\TesteJogoTexto.dll
 C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.pdb
 C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.genruntimeconfig.cache
 C:\code\TesteJogoTexto\obj\Debug\net10.0\ref\TesteJogoTexto.dll
+C:\code\TesteJogoTexto\obj\Debug\net10.0\TesteJogoTexto.sourcelink.json
