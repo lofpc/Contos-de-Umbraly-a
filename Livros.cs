@@ -52,4 +52,11 @@ public static void Compreensão()
             Console.WriteLine("Sejam sonhos de sincronicidade ou revelações em meio ao crepúsculo, aqueles que encontram conhecimento tendem a ser seduzido por ele, e assim buscar cada vez mais...");
             Console.WriteLine("Eis portanto o lema das bruxas, Ixybil, a busca eterna por epifania.");
         }
+public static void Fogo()
+    {
+        Console.WriteLine("Palavra base:Fol'ho");
+        Console.WriteLine("Sussuros incessantes ecoam em sua mente, pensamentos?");
+        Console.WriteLine("Um livro criado em sua mente pela pura compreensão... Inscrito mas não escrito...");
+        Console.WriteLine("Interessante.");
+    }
 }

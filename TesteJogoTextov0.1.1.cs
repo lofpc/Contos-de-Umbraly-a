@@ -23,57 +23,6 @@ public static class Conhecido
     {
         public static List <string> sabedorias = new List<string> {$""};
     }
-public static class RNG //Sistema de RNG 
-{public static void RNGando() 
-{Valores.dado = new Random(); Valores.número = Valores.dado.Next(1, 21); //counter serve como sistema de pity
-if (Valores.número < 10) {Valores.counter = Valores.counter + 1;}
-
-if (Valores.counter == 2) {Valores.número = Valores.dado.Next (10, 21);} Console.WriteLine($"Seu resultado é: {Valores.número}");}}
-
-public static class TelaStats{ //Sistema de Stats
-public static void Statando(){int Vida = Valores.Vida; int Pontos = Valores.pontos;
-List<int> pontostats = Valores.pontostats; List<string> stats = Valores.stats; int mudança = Valores.mudança;
-        /* tela de stats */
-        Console.WriteLine("\n Status: \n"); foreach (var stat in stats) {Console.WriteLine (stat);} //nome de cada status
-        Console.WriteLine("\n Pontuações: \n"); foreach (var pontostat in pontostats) {Console.WriteLine (pontostat);} //valor de cada status
-        Console.WriteLine ($"\n Sua vida atual é:{Vida} (Imutável, Inevitável.)"); //valor de vida (não pode ser aumentado pela tela)
-        Console.Write("\n Pontos restantes: "); Console.Write($"{Pontos}"); //valor de pontos de aprimoramento
-        Console.WriteLine("(Para acresentar seus status digite (nome do stat) ou Encerrar) (APENAS UM NÚMERO INTEIRO)"); //esse bandaid vai ter de servir, n sei consertar o bug
-        //talvez um sistema de limitação resolva. ctz q o erro vem do convert to int
-
-switch(Console.ReadLine()){case $"Força":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Força?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[0] = Valores.pontostats[0] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
-
-                        case $"Velocidade":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Velocidade?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");} 
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança){Valores.pontostats[1] = Valores.pontostats[1] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
-
-                case $"Mental":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Mental?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[2] = Valores.pontostats[2] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
-
-                case $"Observação":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Observação?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[3] = Valores.pontostats[3] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
-
-                default:Console.WriteLine("Inválido(Você quer uma conquista por testar meu código???)"); break;
-
-                case $"Encerrar":
-                Console.WriteLine("Isto irá encerrar a distribuição de status atual e você perderá seus pontos restantes (recomendado apenas para testes), está certo disso?(S = Sim/ N = Não)");
-                switch(Console.ReadLine().ToUpper()) {case "S": Valores.pontos = 0; break; case "N": break;} break;}}}
 public static void Main (string [] args)
 {string Nome = Valores.Nome; int mudança = Valores.mudança; int Pontos = Valores.pontos;
 int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado = Valores.dado;
@@ -243,7 +192,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 {Console.WriteLine("Sucesso..."); Console.WriteLine("Você rapidamente se aproxima por trás, a figura tenta virar a tempo mas é fútil. Com um rápido movimento você quebra o pescoço dela"); Console.ReadKey(); Console.WriteLine("Por que você fez isso?");}
                 
                 else if (CD2+Valores.pontostats[0] < 16)
-                {Console.WriteLine("Morte..."); //continuar daqui 24/01/2026 12:00
+                {Console.WriteLine("Morte..."); 
                 Console.WriteLine("Você é lento demais. A mulher rapidamente se vira junta com sua espada.\nRapidamente, você deixa de ser... Uma morte completamente piedosa.");Valores.Vida = 0;
                 Morte.Morrando();}
                 break;

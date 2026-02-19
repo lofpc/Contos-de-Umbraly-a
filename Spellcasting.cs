@@ -14,5 +14,4 @@ Valores.casting.Add(Console.ReadLine().ToUpper());
 foreach (var cast in Valores.casting)
 {
     Console.WriteLine($"\"{cast}\"");}
-
 }}
