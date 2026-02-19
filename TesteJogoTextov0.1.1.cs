@@ -11,131 +11,18 @@ using Microsoft.VisualBasic;
 //para meu eu do futuro e qualquer um que tentar ler esse código depois. As coisas tavam muito grandes e eu reduzi em troca de legibilidade. Ainda dá, com esforço. Desculpa.
 //procurar dps uma forma melhor de loopar só a tela de status, deve ter. Se alguém ler isso, aceito sugestões, só sou lerdo.
 namespace jogo;class Programa
-{ public class Valores //Fonte para pegar e modificar valores.
-{public static int pontos = 5; public static int mudança = 0; public static int Vida = 3;
-public static string Nome = (""); public static bool Testedesorte = true; public static Random dado = new Random();
-public static int número = dado.Next(1, 21); public static string ReceberDano = "Sua vida desceu em 1 devido à falta de";
-public static List<string> stats = new List<string> {$"Força","Velocidade","Mental","Observação"}; public static List<int> pontostats = [1, 1, 1, 1]; 
-public static int maior = pontostats.Max(); public static int menor = pontostats.Min(); public static int Run = 10; public static int fé = 0;public static int counter = 0; public static int amnr = 0;
-public static int ksy = 0; public static int aqua = 0; public static int revelação = 0; public static int ampliado = 0; public static int tochas = 0; public static int cálice = 0;public static List<string> casting = new List<string> {$""};}  
 
+{
 
 
 public static class Morte //Sistema de morte
 {public static void Morrando()
 {if (Valores.Vida < 1) {Console.WriteLine("Você Morreu");Console.ReadKey(); Environment.Exit(0);}}}
 
-public static class Livros
-{public static void Inversão()
-{
-   Console.WriteLine("Palavra de Inversão:Kssyra");
-   Console.WriteLine("Para todas as bruxas que tentarem experimentar Kssyra. Eu CONHEÇO o ditado de água e óleo.");
-   Console.WriteLine("Dito isso o oposto alquímico de água é fogo. Se você fizer o experimento que a Eve criou de juntar água e óleo num copo e usar Kssyra, você explode");
-   Console.WriteLine("Grata, -Cinza");
-}
-public static void Ampliar()
-        {
-            Console.WriteLine("Palavra de Ampliação:Bufur");
-            Console.WriteLine("Magia vulgar retirada da Serpente Negra pela Matriarca");
-            Console.WriteLine("Amplia aquilo que é tomado como alvo de forma brusca e incessante, emulando aspecto do próprio Vazio");
-            Console.WriteLine("Infelizmente aquilo que é afetado por aquela magia tende se tornar um câncer no mundo. Eu não vou fazer outra reunião pra lidar com os problemas daquela inconsequente.");
-        }
-public static void Água()
-        {
-            Console.WriteLine("Palavra base:Haga");
-            Console.WriteLine("Conceito básico da magia. Água é uma das muitas palavras base das quais as primeiras heresias foram escritas.");
-            Console.WriteLine("Infelizmente tive de ceder uma de minhas assistentes para a Serpente como moeda de troca por conhecimento, mas o nome verdadeira de uma base vale muito mais que uma vida.");
-            Console.WriteLine("A Serpente sendo rainha do Vazio, é dentre muitas características, fluida. Apenas as veteranas dentre nós que presenciaram a Guerra do Selamento conseguem entender isso plenamente.");
-        }
-public static void Purificar()
-        {
-            Console.WriteLine("Palavra de Purificação:Amnr");
-            Console.WriteLine("Bestas e ambições embora parecidas, tem duas diferenças principais. A física, da qual se constitui bestas como morfas e ambições como amorfas.");
-            Console.WriteLine("E sua natureza. Bestas devoram pela necessidade de sustento, elas comem para se manter. Enquanto ambições consomem por consumir, tudo que elas desejam é consumir e crescer.");
-            Console.WriteLine("Portanto a diferença da qual nos baseamos pra essa magia é a seletividade das Bestas, o que se tornou uma arma poderosa contra ambições, destruir aspectos exclusivos de algo é a forma mais limpa de matar.");
-        }
-public static void Floresta()
-        {
-            Console.WriteLine("Leis da Floresta");
-            Console.WriteLine("A natureza e leis da Floresta eram consideradas tópico tabú, inclusive dentre as bruxas. Por sorte devido a experimentos recentes mais e mais informações foram obtidas.");
-            Console.WriteLine("A Floresta e as Bestas das quais ela reina vivem em uma natureza cíclica de Auto-devorar. O melhor exemplo disto seriam as névoas e as árvores");
-            Console.WriteLine("Como elaborado pelas observações do Experimento, as árvores da floresta se alimentam do excesso da névoa, que em torno se alimentam da força mental dos seres vivos.");
-            Console.WriteLine("Como sua alimentação é gradual as árvores enganam os viajantes para a névoa poder se alimentar e crescer, enquanto a névoa tem seus pedaços devorados pelas árvores. Embora essa e outras simbioses existam, mais pesquisa é necessária");
-            Console.WriteLine("Não dá para afirmar com certeza no momento atual se elas prefiririam viver independentemente ou não, afinal, toda Besta preza por seu próximo banquete.");
-        }
-public static void Filhos()
-        {
-            Console.WriteLine("Filhos do Crepúsculo");
-            Console.WriteLine("Seguidores da compaixão que tem força o suficiente para não virar sombras.");
-            Console.WriteLine("Eles tem muitas similaridades com andarilhos oníricos e até conseguem invadir os bolsos de outros seres");
-            Console.WriteLine("A característica mais marcante é eles se assemelharem mais e mais com sua Deusa conforme se tornam um de seus filhos");
-            Console.WriteLine("Um verdadeiro desperdício de suas características físicas e oníricas aprimoradas...");
-        }
-public static void Compreensão()
-        {
-            Console.WriteLine("Palavra de Compreensão:Ixybil");
-            Console.WriteLine("A base da natureza de nós, bruxas é a compreensão de tudo aquilo que é proibido, nós somos seres movidos por \"Heresia\".");
-            Console.WriteLine("A busca das bruxas tende a sempre ser forçada, explorando os limites e linhas da moralidade e biologia humana. Contudo tende a começar de forma natural");
-            Console.WriteLine("Sejam sonhos de sincronicidade ou revelações em meio ao crepúsculo, aqueles que encontram conhecimento tendem a ser seduzido por ele, e assim buscar cada vez mais...");
-            Console.WriteLine("Eis portanto o lema das bruxas, Ixybil, a busca eterna por epifania.");
-        }
-}
-
 public static class Conhecido
     {
         public static List <string> sabedorias = new List<string> {$""};
     }
-public static class RNG //Sistema de RNG 
-{public static void RNGando() 
-{Valores.dado = new Random(); Valores.número = Valores.dado.Next(1, 21); //counter serve como sistema de pity
-if (Valores.número < 10) {Valores.counter = Valores.counter + 1;}
-
-if (Valores.counter == 2) {Valores.número = Valores.dado.Next (10, 21);} Console.WriteLine($"Seu resultado é: {Valores.número}");}}
-
-public static class TelaStats{ //Sistema de Stats
-public static void Statando(){int Vida = Valores.Vida; int Pontos = Valores.pontos;
-List<int> pontostats = Valores.pontostats; List<string> stats = Valores.stats; int mudança = Valores.mudança;
-        /* tela de stats */
-        Console.WriteLine("\n Status: \n"); foreach (var stat in stats) {Console.WriteLine (stat);} //nome de cada status
-        Console.WriteLine("\n Pontuações: \n"); foreach (var pontostat in pontostats) {Console.WriteLine (pontostat);} //valor de cada status
-        Console.WriteLine ($"\n Sua vida atual é:{Vida} (Imutável, Inevitável.)"); //valor de vida (não pode ser aumentado pela tela)
-        Console.Write("\n Pontos restantes: "); Console.Write($"{Pontos}"); //valor de pontos de aprimoramento
-        Console.WriteLine("(Para acresentar seus status digite (nome do stat) ou Encerrar) (APENAS UM NÚMERO INTEIRO)"); //esse bandaid vai ter de servir, n sei consertar o bug
-        //talvez um sistema de limitação resolva. ctz q o erro vem do convert to int
-
-switch(Console.ReadLine()){case $"Força":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Força?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[0] = Valores.pontostats[0] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
-
-                        case $"Velocidade":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Velocidade?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");} 
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança){Valores.pontostats[1] = Valores.pontostats[1] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
-
-                case $"Mental":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Mental?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[2] = Valores.pontostats[2] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
-
-                case $"Observação":
-                Console.WriteLine("O quanto você deseja aumentar o stat de Observação?");
-                mudança = Convert.ToInt32(Console.ReadLine());
-                    {if (mudança > Pontos) {Console.WriteLine("inválido");}
-                    else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[3] = Valores.pontostats[3] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
-
-                default:Console.WriteLine("Inválido(Você quer uma conquista por testar meu código???)"); break;
-
-                case $"Encerrar":
-                Console.WriteLine("Isto irá encerrar a distribuição de status atual e você perderá seus pontos restantes (recomendado apenas para testes), está certo disso?(S = Sim/ N = Não)");
-                switch(Console.ReadLine().ToUpper()) {case "S": Valores.pontos = 0; break; case "N": break;} break;}}}
 public static void Main (string [] args)
 {string Nome = Valores.Nome; int mudança = Valores.mudança; int Pontos = Valores.pontos;
 int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado = Valores.dado;
@@ -305,7 +192,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 {Console.WriteLine("Sucesso..."); Console.WriteLine("Você rapidamente se aproxima por trás, a figura tenta virar a tempo mas é fútil. Com um rápido movimento você quebra o pescoço dela"); Console.ReadKey(); Console.WriteLine("Por que você fez isso?");}
                 
                 else if (CD2+Valores.pontostats[0] < 16)
-                {Console.WriteLine("Morte..."); //continuar daqui 24/01/2026 12:00
+                {Console.WriteLine("Morte..."); 
                 Console.WriteLine("Você é lento demais. A mulher rapidamente se vira junta com sua espada.\nRapidamente, você deixa de ser... Uma morte completamente piedosa.");Valores.Vida = 0;
                 Morte.Morrando();}
                 break;
@@ -502,22 +389,12 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                                 
                                                 case "2":
-                                                //continuar dps
+                                                SC.SCast();
+                                                if (Valores.casting.Contains("") && Valores.casting.Contains("") && Valores.casting.Contains(""))
+                                                {Console.WriteLine("Sucesso");} //continuar dps e lembrar de adicionar o aprendizado do fogo!!!!!!!!!!!1!
                                                 break;
                                                 }
-                                                Console.WriteLine("Invoque a primeira palavra."); //separar isso pra outro class ou arquivo!!!! reutilizar vai ser bom
-                                                Valores.casting.Add(Console.ReadLine().ToUpper());
-
-                                                Console.WriteLine("Invoque a segunda palavra.");
-                                                Valores.casting.Add(Console.ReadLine().ToUpper());
-
-                                                Console.WriteLine("Invoque a terceira palavra.");
-                                                Valores.casting.Add(Console.ReadLine().ToUpper());
-                                                foreach (var cast in Valores.casting)
-                                                {
                                                 
-                                                Console.WriteLine($"\"{cast}\"");}
-
                                                 }
                                                 break;
                                             }
