@@ -505,8 +505,14 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 //continuar dps
                                                 break;
                                                 }
-                                                Console.WriteLine("Invoque a primeira palavra.");
-                                                Valores.casting.Add(Console.ReadLine());
+                                                Console.WriteLine("Invoque a primeira palavra."); //separar isso pra outro class ou arquivo!!!! reutilizar vai ser bom
+                                                Valores.casting.Add(Console.ReadLine().ToUpper());
+
+                                                Console.WriteLine("Invoque a segunda palavra.");
+                                                Valores.casting.Add(Console.ReadLine().ToUpper());
+
+                                                Console.WriteLine("Invoque a terceira palavra.");
+                                                Valores.casting.Add(Console.ReadLine().ToUpper());
                                                 foreach (var cast in Valores.casting)
                                                 {
                                                 
