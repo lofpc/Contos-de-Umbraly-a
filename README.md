@@ -1,0 +1,1 @@
+Projeto pessoal de jogo de terror de terminal. Até o momento apenas a rota da compaixão foi completa. Para alcançar ela siga o caminho do luar e depois entre no monumento. Planejo botar 4 rotas com 8 a 9 finais ao todo.
