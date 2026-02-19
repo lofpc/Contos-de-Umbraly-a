@@ -401,6 +401,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                                     case "4": //status
                                             {
+                                                TelaStats.Statando();
                                                 break;
                                             }
 
