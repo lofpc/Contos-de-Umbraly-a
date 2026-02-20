@@ -415,13 +415,14 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                                 }
                                                 else if (Valores.cálice == 1)
-                                                {if (Valores.casting.Contains("AMNR") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSYRRA"))
+                                                {if (Valores.casting.Contains("AMNR") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSSYRA"))
                                                 {Console.WriteLine("Sucesso?"); Console.ReadKey();
                                                 Valores.casting.Clear();
                                                 Console.WriteLine("Você de alguma forma consegue arrumar um jeito de acender as tochas"); Console.ReadKey();
                                                 Console.WriteLine("Falhar com tanto sucesso é algo que deve ser estudado"); Console.ReadKey(); 
                                                 Valores.pontostats[3] = Valores.pontostats[3] + 1;
-                                                S2 = 0;}
+                                                S2 = 0;
+                                                break;}
                                                 
                                                 Console.WriteLine("Nada acontece");
                                                 Valores.casting.Clear();

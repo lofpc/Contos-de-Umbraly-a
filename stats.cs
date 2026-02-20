@@ -41,6 +41,6 @@ switch(Console.ReadLine().ToUpper()){case $"FORÇA":
 
                 default:Console.WriteLine("Inválido(Você quer uma conquista por testar meu código???)"); break;
 
-                case $"Encerrar":
+                case $"ENCERRAR":
                 Console.WriteLine("Isto irá encerrar a distribuição de status atual e você perderá seus pontos restantes (recomendado apenas para testes), está certo disso?(S = Sim/ N = Não)");
                 switch(Console.ReadLine().ToUpper()) {case "S": Valores.pontos = 0; break; case "N": break;} break;}}}

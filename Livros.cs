@@ -33,7 +33,7 @@ public static void Floresta()
             Console.WriteLine("A natureza e leis da Floresta eram consideradas tópico tabú, inclusive dentre as bruxas. Por sorte devido a experimentos recentes mais e mais informações foram obtidas.");
             Console.WriteLine("A Floresta e as Bestas das quais ela reina vivem em uma natureza cíclica de Auto-devorar. O melhor exemplo disto seriam as névoas e as árvores");
             Console.WriteLine("Como elaborado pelas observações do Experimento, as árvores da floresta se alimentam do excesso da névoa, que em torno se alimentam da força mental dos seres vivos.");
-            Console.WriteLine("Como sua alimentação é gradual as árvores enganam os viajantes para a névoa poder se alimentar e crescer, enquanto a névoa tem seus pedaços devorados pelas árvores. Embora essa e outras simbioses existam, mais pesquisa é necessária");
+            Console.WriteLine("Como sua alimentação é gradual as árvores enganam os viajantes para a névoa poder se alimentar e crescer, enquanto a névoa tem seus pedaços devorados pelas árvores. \nEmbora essa e outras simbioses existam, mais pesquisa é necessária");
             Console.WriteLine("Não dá para afirmar com certeza no momento atual se elas prefiririam viver independentemente ou não, afinal, toda Besta preza por seu próximo banquete.");
         }
 public static void Filhos()
