@@ -7,7 +7,7 @@ List<int> pontostats = Valores.pontostats; List<string> stats = Valores.stats; i
         Console.WriteLine ($"\n Sua vida atual é:{Vida} (Imutável, Inevitável.)"); //valor de vida (não pode ser aumentado pela tela)
         Console.Write("\n Pontos restantes: "); Console.Write($"{Pontos}"); //valor de pontos de aprimoramento
         Console.WriteLine("(Para acresentar seus status digite (nome do stat) ou Encerrar) (APENAS UM NÚMERO INTEIRO)"); //EU CONSERTEI O BUG DA LEPTOSPIROSE
-switch(Console.ReadLine()){case $"Força":
+switch(Console.ReadLine().ToUpper()){case $"FORÇA":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Força?");
                 MB = Console.ReadLine();
                 int.TryParse(MB, out mudança);
@@ -15,7 +15,7 @@ switch(Console.ReadLine()){case $"Força":
                     else if (mudança < 0) {Console.WriteLine("inválido");}
                     else if (Pontos >= mudança) {Valores.pontostats[0] = Valores.pontostats[0] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
 
-                        case $"Velocidade":
+                        case $"VELOCIDADE":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Velocidade?");
                 MB = Console.ReadLine();
                 int.TryParse(MB, out mudança);
@@ -23,7 +23,7 @@ switch(Console.ReadLine()){case $"Força":
                     else if (mudança < 0) {Console.WriteLine("inválido");}
                     else if (Pontos >= mudança){Valores.pontostats[1] = Valores.pontostats[1] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
 
-                case $"Mental":
+                case $"MENTAL":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Mental?");
                 MB = Console.ReadLine();
                 int.TryParse(MB, out mudança);
@@ -31,7 +31,7 @@ switch(Console.ReadLine()){case $"Força":
                     else if (mudança < 0) {Console.WriteLine("inválido");}
                     else if (Pontos >= mudança) {Valores.pontostats[2] = Valores.pontostats[2] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
 
-                case $"Observação":
+                case $"OBSERVAÇÃO":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Observação?");
                 MB = Console.ReadLine();
                 int.TryParse(MB, out mudança);

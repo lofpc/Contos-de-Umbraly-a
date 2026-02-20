@@ -119,7 +119,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             if(CD2 + pontostats[2] >= 16){
             Console.WriteLine("\t \nPouco a pouco você se lembra de um trecho de uma canção antiga... \"Evite, evite, as mentiras de lá. A floresta tentará...~\"");}
             do{S = 0; Console.WriteLine("O que gostaria de fazer?"); //Escolha de caminho (1)
-                Console.WriteLine("1 - Seguir o caminho da Lua"); Console.WriteLine("2 - Seguir o caminho do Húbris");
+                Console.WriteLine("1 - Seguir o caminho da Lua"); Console.WriteLine("2 - Seguir o caminho do Húbris (WIP)");
                 Console.WriteLine("3 - Respirar fundo"); Console.WriteLine("4 - Status");
             switch(Console.ReadLine()){
                 case "1":
@@ -136,7 +136,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 switch (Console.ReadLine()){
                 case "1":
                 Console.WriteLine("Você entra no monumento... embora o exterior aparente ser impecável, o interior dele é decrépito, com um cheiro de mofo e poeira pairando no ar");RNG.RNGando(); CD2 = Valores.número; if (CD2+pontostats[3] >= 13)
-                {Console.WriteLine("Há muito tempo que algo não encosta aqui, na cidade inteira inclusive..."); Console.ReadKey();} Console.WriteLine("Uma enorme escadaria em espiral se apresenta diante de você. Enquanto você escala ela você percebe o chão começar a vacilar..."); Console.WriteLine("Não há tempo de pensar... escolha rápido"); Console.WriteLine("1 - Pular com toda minha força (Força CD:16) \n2 - Correr com toda minha Velocidade(Velocidade CD: 16) \n3 = Esperar um milagre(Mental CD: 18 Arriscado)");
+                {Console.WriteLine("Há muito tempo que algo não encosta aqui, na cidade inteira inclusive..."); Console.ReadKey();} Console.WriteLine("Uma enorme escadaria em espiral se apresenta diante de você. Enquanto você escala ela você percebe o chão começar a vacilar..."); Console.WriteLine("Não há tempo de pensar... escolha rápido"); Console.WriteLine("1 - Pular com toda minha força (Força CD:16) \n2 - Correr com toda minha Velocidade(Velocidade CD: 16) \n3 - Esperar um milagre(Mental CD: 18 Arriscado)");
                  /*Escolha Rápida Monumento*/   switch (Console.ReadLine()){
                     case "1":
                     RNG.RNGando();
@@ -389,7 +389,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                                 
                                                 case "2":
-                                                Console.WriteLine("Você sente a magia cobrar seu preço...");
+                                                {Console.WriteLine("Você sente a magia cobrar seu preço...");
                                                 Valores.pontostats[3] = Valores.pontostats[3] - 1;
                                                 if (Valores.pontostats[3] < 1)
                                                 {Valores.Vida = Valores.Vida - 1;
@@ -425,7 +425,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 
                                                 Console.WriteLine("Nada acontece");
                                                 Valores.casting.Clear();
-                                                break;
+                                                break;}
                                                 }
                                                 break;
                                                 }
