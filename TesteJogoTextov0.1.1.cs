@@ -389,10 +389,44 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                                 
                                                 case "2":
+                                                Console.WriteLine("Você sente a magia cobrar seu preço...");
+                                                Valores.pontostats[3] = Valores.pontostats[3] - 1;
+                                                if (Valores.pontostats[3] < 1)
+                                                {Valores.Vida = Valores.Vida - 1;
+                                                    Morte.Morrando();}
+                                                
                                                 SC.SCast();
-                                                if (Valores.casting.Contains("HAGA") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSSYRA"))
-                                                {Console.WriteLine("Sucesso");
-                                                Livros.Fogo();} //continuar dps e lembrar de adicionar o aprendizado do fogo!!!!!!!!!!!1!
+                                                if (Valores.cálice == 0)
+                                                {if (Valores.casting.Contains("HAGA") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSSYRA"))
+                                                {Console.WriteLine("Sucesso"); Console.ReadKey();
+                                                Livros.Fogo();
+                                                Valores.casting.Clear();
+                                                if (Valores.fogando < 1)
+                                                {Conhecido.sabedorias.Add("Fol'ho, Base Fogo"); Valores.fogando = 1;
+                                                Valores.pontostats[3] = Valores.pontostats[3] + 2;}
+                                                Console.WriteLine("De forma repentina as tochas se acendem em uma explosão carmesim...");
+                                                Console.WriteLine("Tristes memórias nunca queimam..."); Console.ReadKey();
+                                                Console.WriteLine("O portão de pedra diante de você se abre."); Console.ReadKey();
+                                                Valores.pontostats[3] = Valores.pontostats[3] + 2;
+                                                S2 = 0;
+                                                break;}
+                                                Console.WriteLine("Nada acontece");
+                                                Valores.casting.Clear();
+                                                break;
+                                                }
+                                                else if (Valores.cálice == 1)
+                                                {if (Valores.casting.Contains("AMNR") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSYRRA"))
+                                                {Console.WriteLine("Sucesso?"); Console.ReadKey();
+                                                Valores.casting.Clear();
+                                                Console.WriteLine("Você de alguma forma consegue arrumar um jeito de acender as tochas"); Console.ReadKey();
+                                                Console.WriteLine("Falhar com tanto sucesso é algo que deve ser estudado"); Console.ReadKey(); 
+                                                Valores.pontostats[3] = Valores.pontostats[3] + 1;
+                                                S2 = 0;}
+                                                
+                                                Console.WriteLine("Nada acontece");
+                                                Valores.casting.Clear();
+                                                break;
+                                                }
                                                 break;
                                                 }
                                                 
@@ -416,7 +450,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                             }
                                 }}while(S2 > 1);
-                
+                //continuar daqui dps das tochas
                 break;
 
                 case "4": S2 = 3; TelaStats.Statando(); break;
