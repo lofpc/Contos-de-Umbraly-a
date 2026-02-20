@@ -108,7 +108,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             case "4": S = 2; TelaStats.Statando();break;
             default: S = 2; break;} }while(S > 1);
 
-            Console.WriteLine("Enquanto você vaga pela floresta sua mente vaga junto... Os desenhos no tronco das árvores negras, eles sempre estiveram lá? \nSuas marcações brilhantes em branco reluzem o que aparenta ser uma face..."); Console.ReadKey();
+            Console.WriteLine("Enquanto você vaga pela floresta, sua mente vaga junto... Os desenhos no tronco das árvores negras, eles sempre estiveram lá? \nSuas marcações brilhantes em branco reluzem o que aparenta ser uma face..."); Console.ReadKey();
             Console.WriteLine("Ao olhar melhor você vê os rostos começarem a mexer e sussurrar em uma cacofonia dissonante..."); Console.ReadKey();
             Console.WriteLine("\t \n\"Você está perdido jovem?\" / \"Ele precisa de ajuda...\" / \"Sozinho... Tão sozinho...\""); Console.ReadKey();
             Console.WriteLine("Enquanto elas falam um leve fio de névoa entra coberto de impurezas roxas dentro de suas rachaduras e sai com a cor pálida de antes..."); Console.ReadKey();
@@ -390,8 +390,9 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 
                                                 case "2":
                                                 SC.SCast();
-                                                if (Valores.casting.Contains("") && Valores.casting.Contains("") && Valores.casting.Contains(""))
-                                                {Console.WriteLine("Sucesso");} //continuar dps e lembrar de adicionar o aprendizado do fogo!!!!!!!!!!!1!
+                                                if (Valores.casting.Contains("HAGA") && Valores.casting.Contains("BUFUR") && Valores.casting.Contains("KSSYRA"))
+                                                {Console.WriteLine("Sucesso");
+                                                Livros.Fogo();} //continuar dps e lembrar de adicionar o aprendizado do fogo!!!!!!!!!!!1!
                                                 break;
                                                 }
                                                 
