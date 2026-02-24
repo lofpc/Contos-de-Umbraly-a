@@ -29,7 +29,7 @@ int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado =
 int número = Valores.número; string ReceberDano = Valores.ReceberDano; List<string> stats = Valores.stats;
 List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usados
         
-        Console.WriteLine("Place holder:Placeholder de Placeholder"); //Título
+        Console.WriteLine("Contos de Umbraly'a"); //Título
         
         Console.WriteLine("Aperte qualquer tecla pra continuar"); Console.ReadKey(); Console.WriteLine("\n \"Bem-vindo...\"");
         
