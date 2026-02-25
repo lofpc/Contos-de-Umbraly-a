@@ -328,7 +328,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                             case "2": //ksyrra
                                             Livros.Inversão();
                                             if(Valores.ksy < 1)
-                                            {Conhecido.sabedorias.Add("Ksyrra, Inversão");
+                                            {Conhecido.sabedorias.Add("Kssyra, Inversão");
                                             Valores.ksy = 1;
                                             Console.WriteLine("Novo Conhecimento obtido");}
                                             break;
@@ -451,7 +451,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                             }
                                 }}while(S2 > 1);
-                //continuar daqui dps das tochas
+                Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria"); Console.ReadKey(); //continuar daqui dps das tochas
                 break;
 
                 case "4": S2 = 3; TelaStats.Statando(); break;
