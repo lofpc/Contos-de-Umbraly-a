@@ -15,7 +15,7 @@ namespace jogo;class Programa
 {
 
 
-public static class Morte //Sistema de morte
+public static partial class Morte //Sistema de morte
 {public static void Morrando()
 {if (Valores.Vida < 1) {Console.WriteLine("Você Morreu");Console.ReadKey(); Environment.Exit(0);}}}
 
@@ -26,7 +26,7 @@ public static class Conhecido
 public static void Main (string [] args)
 {string Nome = Valores.Nome; int mudança = Valores.mudança; int Pontos = Valores.pontos;
 int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado = Valores.dado;
-int número = Valores.número; string ReceberDano = Valores.ReceberDano; List<string> stats = Valores.stats;
+int número = Valores.número; ; List<string> stats = Valores.stats;
 List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usados
         
         Console.WriteLine("Contos de Umbraly'a"); //Título
@@ -66,10 +66,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             Console.WriteLine("Você sente o ar gélido entrar seu nariz e pulmões e um sentimento de leveza? Algo muda dentro de você"); Console.ReadKey();
             Valores.pontostats[2] = Valores.pontostats[2] - 1;
             Valores.pontostats[3] = Valores.pontostats[3] + 1;
-                if (Valores.pontostats[2] <= 0)
-                {Console.WriteLine($"{ReceberDano} {Valores.stats[2]}");
-                Valores.Vida = Valores.Vida - 1;
-                Morte.Morrando();}break;
+                dano.Definhamento.DefMen(); break;
 
             case "2":
                 Valores.CDteste =14;
@@ -84,10 +81,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 {Console.WriteLine("Você não consegue pensar direito...");
                 Console.WriteLine("A cada suspiro de névoa você sente uma parte sua ser perdida");
                 Valores.pontostats[2] = Valores.pontostats[2] - 1;
-                    if (Valores.pontostats[2] < 1)
-                        {Valores.Vida = Valores.Vida - 1;
-                        Console.WriteLine($"{ReceberDano} {Valores.stats[2]}");
-                        Morte.Morrando();}}break;
+                    dano.Definhamento.DefMen();}break;
 
             case "3":
             Valores.CDteste = 10;
@@ -101,8 +95,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                     {Console.WriteLine("Você vaga por horas sem encontrar nada para comer... Em seu estupor você decide comer a névoa ao seu redor..."); Console.ReadKey();
                     Console.WriteLine("Ela possui um gosto familiar... Memórias?");
                     Console.WriteLine("Você sente como se uma parte sua fosse perdida...");Valores.pontostats[2] = Valores.pontostats[2] - 1;
-                    if(Valores.pontostats[2] < 1)
-                        {Valores.Vida = Valores.Vida-1; Console.WriteLine($"{ReceberDano} {stats[2]}"); Morte.Morrando();} 
+                    dano.Definhamento.DefMen();
                     }break;
             case "4": S = 2; TelaStats.Statando(); Console.Clear();break;
             default: S = 2; break;} }while(S > 1);
@@ -417,9 +410,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 case "2":
                                                 {Console.WriteLine("Você sente a magia cobrar seu preço...");
                                                 Valores.pontostats[3] = Valores.pontostats[3] - 1;
-                                                if (Valores.pontostats[3] < 1)
-                                                {Valores.Vida = Valores.Vida - 1;
-                                                    Morte.Morrando();}
+                                                dano.Definhamento.DefObs();
                                                 
                                                 SC.SCast();
                                                 Console.ReadKey(); Console.Clear();
@@ -501,10 +492,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Valores.pontostats[2] = Valores.pontostats[2] - 1;
                 Valores.pontostats[3] = Valores.pontostats[3] + 1;
                 Console.WriteLine("Coisas mudam dentro de você");
-                if (Valores.pontostats[2] < 1)
-                {Valores.Vida = Valores.Vida-1;
-                Console.WriteLine($"{ReceberDano} {stats[2]}");
-                Morte.Morrando();}
+                dano.Definhamento.DefMen();
                 Console.ReadKey(); Console.Clear();
                 break;
 
