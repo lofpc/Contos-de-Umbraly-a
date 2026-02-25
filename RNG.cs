@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 public static partial class RNG //Sistema de RNG 
 {public static void RNGando() 
 {Valores.dado = new Random(); Valores.número = Valores.dado.Next(1, 21); //counter serve como sistema de pity
@@ -13,13 +15,15 @@ public static partial class D20s
         RNG.RNGando();
         if (Valores.número + Valores.pontostats[0] >= Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[0]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[0]}");
             Console.WriteLine("Sucesso");
+            Valores.sucesso = true;
         }
         else if (Valores.número + Valores.pontostats[0] < Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[0]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[0]}");
             Console.WriteLine("Fracasso...");
+            Valores.sucesso = false;
         }
     }
 
@@ -28,13 +32,15 @@ public static partial class D20s
         RNG.RNGando();
         if (Valores.número + Valores.pontostats[1] >= Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[1]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[1]}");
             Console.WriteLine("Sucesso");
+            Valores.sucesso = true;
         }
         else if (Valores.número + Valores.pontostats[1] < Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[1]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[1]}");
             Console.WriteLine("Fracasso...");
+            Valores.sucesso = false;
         }
     }
 
@@ -43,13 +49,15 @@ public static partial class D20s
         RNG.RNGando();
         if (Valores.número + Valores.pontostats[2] >= Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[2]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[2]}");
             Console.WriteLine("Sucesso");
+            Valores.sucesso = true;
         }
         else if (Valores.número + Valores.pontostats[2] < Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[2]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[2]}");
             Console.WriteLine("Fracasso...");
+            Valores.sucesso = false;
         }
     }
 
@@ -58,14 +66,16 @@ public static partial class D20s
         RNG.RNGando();
         if (Valores.número + Valores.pontostats[3] >= Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[3]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[3]}");
             Console.WriteLine("Sucesso");
+            Valores.sucesso = true;
         }
         
         else if (Valores.número + Valores.pontostats[3] < Valores.CDteste)
         {
-            Console.WriteLine($"{Valores.número + Valores.pontostats[3]}");
+            Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[3]}");
             Console.WriteLine("Fracasso...");
+            Valores.sucesso = false;
         }
     }
 }

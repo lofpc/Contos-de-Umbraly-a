@@ -46,7 +46,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
         Console.WriteLine("\"Como o responsável por sua introdução devo lhe informar como esse mundo funciona");
         Console.WriteLine("\"Tudo aqui é baseado em sorte... Embora há coisas que podem alterar o destino, os Status\"");
         Console.WriteLine($"\"Por exemplo {Nome}, no seu caso seu Status Força é {Valores.pontostats[0]} e seu Mental é {Valores.pontostats[2]}");
-        Console.WriteLine($"\"Mas, há tambem coisas fora de nosso controle. Leis imutáveis da natureza... Por exemplo sua Vida que sempre começa em {Vida}\"");
+        Console.WriteLine($"\"Mas, há tambem coisas fora de nosso controle. Leis imutáveis da natureza... Por exemplo, sua Vida, que sempre começa em {Vida}\"");
         Console.WriteLine($"\"Gostaria de testar sua sorte?\" (S = sim/N = não)"); /* teste de sorte */ 
         
         do {switch(Console.ReadLine().ToUpper())
@@ -72,34 +72,33 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Morte.Morrando();}break;
 
             case "2":
-                RNG.RNGando();
-                int CD = Valores.número;
-                if (CD + Valores.pontostats[2] >= 14)
-                {Console.WriteLine($"{CD}+{Valores.pontostats[2]}: Sucesso");
+                Valores.CDteste =14;
+                D20s.dadomen();
+                if (Valores.sucesso == true)
+                {
                 Console.WriteLine("Você consegue ver a luz com maior clareza após se concentrar e limpar a mente");
                 Console.WriteLine("Você sente algo mudar dentro de você...");
                 Valores.pontostats[3] = Valores.pontostats[3] + 1;}
-                else if (CD + Valores.pontostats[2] < 14)
-                {Console.WriteLine($"{CD}+{Valores.pontostats[2]}: Fracasso...");
-                Console.WriteLine("Você não consegue pensar direito...");
+                
+                else if (Valores.sucesso == false)
+                {Console.WriteLine("Você não consegue pensar direito...");
                 Console.WriteLine("A cada suspiro de névoa você sente uma parte sua ser perdida");
                 Valores.pontostats[2] = Valores.pontostats[2] - 1;
-                    if (Valores.pontostats[2] <= 0)
+                    if (Valores.pontostats[2] < 1)
                         {Valores.Vida = Valores.Vida - 1;
                         Console.WriteLine($"{ReceberDano} {Valores.stats[2]}");
                         Morte.Morrando();}}break;
 
             case "3":
-            RNG.RNGando();
-            CD = Valores.número;
-            if (CD + Valores.pontostats[3] >= 10)
-                    {Console.WriteLine($"{CD}+{Valores.pontostats[3]}: Sucesso");
-                    Console.WriteLine("Você encontra uma massa amorfa de gosma e muco, para seu cérebro esfomeado parece uma janta digna de um REI..."); Console.ReadKey();
+            Valores.CDteste = 10;
+            D20s.dadoobs();
+            if (Valores.sucesso ==true)
+                    {Console.WriteLine("Você encontra uma massa amorfa de gosma e muco, para seu cérebro esfomeado parece uma janta digna de um REI..."); Console.ReadKey();
                     Console.WriteLine("Você sente algo mudar dentro de você... Um súbito invigoramento..."); Console.ReadKey();
                     Valores.Vida = Valores.Vida + 1;}
-            else if (CD + Valores.pontostats[3] < 10)
-                    {Console.WriteLine($"{CD}+{Valores.pontostats[3]}: Fracasso...");
-                    Console.WriteLine("Você vaga por horas sem encontrar nada para comer... Em seu estupor você decide comer a névoa ao seu redor..."); Console.ReadKey();
+            
+            else if (Valores.sucesso ==false)
+                    {Console.WriteLine("Você vaga por horas sem encontrar nada para comer... Em seu estupor você decide comer a névoa ao seu redor..."); Console.ReadKey();
                     Console.WriteLine("Ela possui um gosto familiar... Memórias?"); Console.ReadKey();
                     Console.WriteLine("Você sente como se uma parte sua fosse perdida...");Valores.pontostats[2] = Valores.pontostats[2] - 1;
                     if(Valores.pontostats[2] < 1)
@@ -115,8 +114,10 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             Console.WriteLine("\t \n\"Respire fundo... \" / \"Se acalme...\" / \"Nós queremos apenas o melhor...\""); Console.ReadKey();
             Console.WriteLine("Pouco a pouco a floresta se parte levando a dois caminhos... Um a sua frente é iluminado pelo luar... Enquanto o da direita carrega um brilho sedutor..."); Console.ReadKey();
             Console.WriteLine("\t \n\"Siga a direita...\" / \"Confie em nós...\" / \"Bestas são imparciais...\""); Console.ReadKey();
-            RNG.RNGando();int CD2 = Valores.número;
-            if(CD2 + pontostats[2] >= 16){
+            
+            Valores.CDteste = 16;
+            D20s.dadomen();
+            if(Valores.sucesso==true){
             Console.WriteLine("\t \nPouco a pouco você se lembra de um trecho de uma canção antiga... \"Evite, evite, as mentiras de lá. A floresta tentará...~\"");}
             do{S = 0; Console.WriteLine("O que gostaria de fazer?"); //Escolha de caminho (1)
                 Console.WriteLine("1 - Seguir o caminho da Lua"); Console.WriteLine("2 - Seguir o caminho do Húbris (WIP)");
@@ -135,28 +136,27 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                 switch (Console.ReadLine()){
                 case "1":
-                Console.WriteLine("Você entra no monumento... embora o exterior aparente ser impecável, o interior dele é decrépito, com um cheiro de mofo e poeira pairando no ar");RNG.RNGando(); CD2 = Valores.número; if (CD2+pontostats[3] >= 13)
+                Console.WriteLine("Você entra no monumento... embora o exterior aparente ser impecável, o interior dele é decrépito, com um cheiro de mofo e poeira pairando no ar"); Valores.CDteste = 13; D20s.dadoobs(); if (Valores.sucesso == true)
                 {Console.WriteLine("Há muito tempo que algo não encosta aqui, na cidade inteira inclusive..."); Console.ReadKey();} Console.WriteLine("Uma enorme escadaria em espiral se apresenta diante de você. Enquanto você escala ela você percebe o chão começar a vacilar..."); Console.WriteLine("Não há tempo de pensar... escolha rápido"); Console.WriteLine("1 - Pular com toda minha força (Força CD:16) \n2 - Correr com toda minha Velocidade(Velocidade CD: 16) \n3 - Esperar um milagre(Mental CD: 18 Arriscado)");
                  /*Escolha Rápida Monumento*/   switch (Console.ReadLine()){
                     case "1":
-                    RNG.RNGando();
-                    CD2 = Valores.número;
-                    if (CD2+Valores.pontostats[0] >= 16)
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[0]}: Sucesso"); Console.WriteLine("Você pula com toda sua força");}
-                    else if (CD2+Valores.pontostats[0] < 16) 
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[0]}: Fracasso...");
-                    Console.WriteLine("Você consegue pular até a plataforma mas cai de forma brusca, por sorte você se defende do impacto. Infelizmente, você defende com a cabeça..."); Console.WriteLine("Você se sente gravemente ferido...");
+                    Valores.CDteste = 16;
+                    D20s.dadofor();
+                    if (Valores.sucesso == true)
+                    {Console.WriteLine("Você pula com toda sua força");}
+                    else if (Valores.sucesso == false) 
+                    {Console.WriteLine("Você consegue pular até a plataforma mas cai de forma brusca, por sorte você se defende do impacto. Infelizmente, você defende com a cabeça..."); Console.WriteLine("Você se sente gravemente ferido...");
                     Valores.Vida = Valores.Vida - 2;
                     Morte.Morrando();}
                     break;
 
                     case "2":
-                    RNG.RNGando();
-                    CD2 = Valores.número;
-                    if (CD2+Valores.pontostats[1] >= 16)
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[1]}: Sucesso"); Console.WriteLine("Você corre com toda sua velocidade");}
-                    else if (CD2+Valores.pontostats[1] < 16) 
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[1]}: Fracasso...");
+                    Valores.CDteste = 16;
+                    D20s.dadovel();
+                    if (Valores.sucesso == true)
+                    {Console.WriteLine("Você corre com toda sua velocidade");}
+                    else if (Valores.sucesso == false) 
+                    {
                     Console.WriteLine("Você consegue correr até a plataforma mas cai de forma brusca, por sorte você se defende do impacto. Infelizmente, você defende com a cabeça...");
                     Console.WriteLine("Você se sente gravemente ferido...");
                     Valores.Vida = Valores.Vida - 2;
@@ -164,20 +164,20 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                     break;
 
                     case "3":
-                    RNG.RNGando();
-                    CD2 = Valores.número;
-                    if (CD2+Valores.pontostats[2] >= 18)
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[2]}: Sucesso"); Console.WriteLine("Sua vontade sobrepõe o mundo, segurando a escadaria no lugar"); Valores.fé = Valores.fé + 1;}
-                    else if (CD2+Valores.pontostats[2] < 18) 
-                    {Console.WriteLine($"{CD2}+{Valores.pontostats[2]}: Fracasso...");
-                    Console.WriteLine("Você cai de uma altura gigantesca... O que você esperava?");
+                    Valores.CDteste =18;
+                    D20s.dadomen();
+                    if (Valores.sucesso == true)
+                    {Console.WriteLine("Sua vontade sobrepõe o mundo, por um momento você visualiza um mundo ideal e a escadaria congela, pairando no ar."); Valores.fé = Valores.fé + 1;}
+                    else if (Valores.sucesso == false) 
+                    {
+                    Console.WriteLine("Você cai de uma altura gigantesca... Talvez milagres sejam algo ingênuo.");
                     Valores.Vida = 0;
                     Morte.Morrando();}
                     break;
                     
                     default:
                     Console.WriteLine("Você não pensa a tempo e cai"); Valores.Vida = 0; Morte.Morrando();
-                    break;} //PAREI AQUI 24/01/2026 
+                    break;} 
                 Console.WriteLine("\t\tApós muito esforço, você chegou a câmara superior. O cheiro de poeira reminescente é substituido por uma mistura de ar noturno gélido e lavanda..."); Console.WriteLine("\t\tUm portão imponente bloqueia seu caminho..."); Console.ReadKey();
                 Console.WriteLine("Ao abrir as portas você se depara com as costas de uma jovem de pele pálida. A silhueta ajoelhada dela é envolta em cabelos pretos e longos. Descansando contra a perna dela, uma espada longa e curva.");
                 Console.WriteLine("Você está tão perto... O que você faz?");
@@ -186,23 +186,27 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("1 - Matar ela antes que ela te perceba (Força CD:16. Arriscado)\n2 = Correr até o outro lado da sala (Velocidade CD:17. Arriscado)\n3 - Conversar com ela\n4 - Status"); //parei aqui 24/01/26 11:30.
                 switch (Console.ReadLine())
                 {case "1":
-                RNG.RNGando();
-                CD2 = Valores.número;
-                if (CD2+Valores.pontostats[0] >= 16)
+                Valores.CDteste = 16;
+                D20s.dadofor();
+
+                if (Valores.sucesso == true)
                 {Console.WriteLine("Sucesso..."); Console.WriteLine("Você rapidamente se aproxima por trás, a figura tenta virar a tempo mas é fútil. Com um rápido movimento você quebra o pescoço dela"); Console.ReadKey(); Console.WriteLine("Por que você fez isso?");}
                 
-                else if (CD2+Valores.pontostats[0] < 16)
+                else if (Valores.sucesso == false)
                 {Console.WriteLine("Morte..."); 
                 Console.WriteLine("Você é lento demais. A mulher rapidamente se vira junta com sua espada.\nRapidamente, você deixa de ser... Uma morte completamente piedosa.");Valores.Vida = 0;
                 Morte.Morrando();}
                 break;
                 
                 case "2":
-                if (CD2+Valores.pontostats[1] >= 17)
-                {Console.WriteLine("Sucesso...");
-                Console.WriteLine("Você corre rapidamente. Quando a mulher percebe ela tenta gritar:\"Esper-\"mas você ignora. As portas se fecham atrás de você");}
+                Valores.CDteste = 17;
+                D20s.dadovel();
 
-                else if (CD2+Valores.pontostats[1] < 17)
+                if (Valores.sucesso == true)
+                {Console.WriteLine("Sucesso...");
+                Console.WriteLine("Você corre rapidamente. Quando a mulher percebe ela tenta gritar:\"Esper-\"mas você ignora. As portas se fecham atrás de você"); Console.ReadKey(); Console.WriteLine("É tão díficil assim confiar nos outros?");}
+
+                else if (Valores.sucesso == false)
                 {Console.WriteLine("Morte...");
                 Console.WriteLine("Você é lento demais. A mulher rapidamente se vira junta com sua espada.\nRapidamente, você deixa de ser... Uma morte completamente piedosa.");Valores.Vida = 0;
                 Morte.Morrando();}
@@ -276,7 +280,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Final S:Compaixão Verdadeira");
                 Console.WriteLine("Mas seria esse mesmo um final feliz?");Console.ReadKey();
                 Console.WriteLine("Uma última ideia ecoa na sua cabeça...");
-                Console.WriteLine("Abyssa, esse poder deve ser útil um dia...");
+                Console.WriteLine("\"Abyssa\", esse poder ancestral deve ser útil um dia...");
                 Environment.Exit(0);}
                 break;
 
@@ -298,15 +302,17 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 case "3": //continuar rota das bruxas dps
                 Console.WriteLine("Ao olhar ao redor, algo se destaca dentre as muitas silhuetas, sombras e \"desformas\" que caminham nas ruas..."); Console.ReadKey();
                 Console.WriteLine("Uma mulher caminha pela rua, sua capa move como o vento contrastando o brilho da estrela com o preto de seu chapéu. Ela porta consigo um grimório com uma marcação de chamas");
-                RNG.RNGando();
-                CD2 = Valores.número;
-                if (CD2+Valores.pontostats[3] >= 15)
+                Valores.CDteste = 15;
+                D20s.dadoobs();
+                if (Valores.sucesso == true)
+
                 {Console.WriteLine("Você conhece o tipo dela. Bruxa. Sempre com soluções, obrigações e contratos...");}
                 Console.WriteLine("Você chama a atenção da mulher em busca de ajuda");Console.ReadKey();
                 Console.WriteLine("\"Entendo, você não é daqui... Não há muito que eu possa fazer, mas eu conheço alguém que pode te ajudar a voltar ao seu lar...\""); Console.ReadKey(); Console.WriteLine("Contanto que ela se interesse, claro"); Console.ReadKey();
                 Console.WriteLine("Você e a jovem bruxa andam por vários corredores sinuosos, hora subindo, hora descendo e hora desafiando a física mundana, você chega ao seu destino..."); Console.ReadKey();
-                RNG.RNGando();
-                CD2 = Valores.número;
+                
+                Valores.CDteste = 15;
+                D20s.dadoobs();
                 do{S2 = 2;
                 Console.WriteLine("Uma grande sala de pedra com duas tochas está perante você. A bruxa desaparece antes que você possa ver e livros permeam a sala.");
                 Console.WriteLine("\t\tO que você deseja fazer?");
@@ -341,7 +347,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                             {
                                                 if (Valores.aqua < 1)
                                                 {Valores.aqua = 1;
-                                                if (CD2+Valores.pontostats[3] >= 15)
+                                                if (Valores.sucesso == true)
                                                 {Console.WriteLine("Você encontra um livro adicional escondido nas sombras."); Console.ReadKey();
                                                 Console.WriteLine("Um cheiro húmido e velho sai dele, suas páginas frágeis com uso repetido, e ele aparenta ser muito mais velho do que você"); Console.ReadKey();
                                                 Livros.Água();
