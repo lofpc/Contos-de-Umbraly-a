@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using árvore;
 using Microsoft.VisualBasic;
 //para meu eu do futuro e qualquer um que tentar ler esse código depois. As coisas tavam muito grandes e eu reduzi em troca de legibilidade. Ainda dá, com esforço. Desculpa.
 //procurar dps uma forma melhor de loopar só a tela de status, deve ter. Se alguém ler isso, aceito sugestões, só sou lerdo.
@@ -101,8 +102,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             default: S = 2; break;} }while(S > 1);
             Console.ReadKey();
             Console.Clear();
-            Console.WriteLine("Enquanto você vaga pela floresta, sua mente vaga junto... Os desenhos no tronco das árvores negras, eles sempre estiveram lá? \nSuas marcações brilhantes em branco reluzem o que aparenta ser uma face..."); Console.ReadKey();
-            Console.WriteLine("Ao olhar melhor você vê os rostos começarem a mexer e sussurrar em uma cacofonia dissonante..."); Console.ReadKey();
+            Console.WriteLine("Enquanto você vaga pela floresta, sua mente vaga junto... Os desenhos no tronco das árvores negras, eles sempre estiveram lá? \nSuas marcações brilhantes em branco reluzem o que aparenta ser uma face..."); Console.ReadKey(); Arvorando.arvore();
+            Console.WriteLine("Ao olhar melhor, você vê os rostos começarem a mexer e sussurrar em uma cacofonia dissonante..."); Console.ReadKey();
             Console.WriteLine("\t \n\"Você está perdido jovem?\" / \"Ele precisa de ajuda...\" / \"Sozinho... Tão sozinho...\""); Console.ReadKey();
             Console.WriteLine("Enquanto elas falam um leve fio de névoa entra coberto de impurezas roxas dentro de suas rachaduras e sai com a cor pálida de antes..."); Console.ReadKey();
             Console.WriteLine("\t \n\"Respire fundo... \" / \"Se acalme...\" / \"Nós queremos apenas o melhor...\""); Console.ReadKey();
@@ -492,7 +493,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Valores.pontostats[2] = Valores.pontostats[2] - 1;
                 Valores.pontostats[3] = Valores.pontostats[3] + 1;
                 Console.WriteLine("Coisas mudam dentro de você");
-                dano.Definhamento.DefMen();
+                dano.Definhamento.DefMen(); 
                 Console.ReadKey(); Console.Clear();
                 break;
 
