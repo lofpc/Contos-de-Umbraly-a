@@ -484,14 +484,14 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria"); Console.ReadKey(); //continuar daqui dps das tochas
                 break;
 
-                case "4": S2 = 3; TelaStats.Statando(); Console.Clear();break;
+                case "4": S2 = 3; TelaStats.Statando(); Console.Clear(); break;
 
                 default: S2 = 3; break;}}while(S2 > 2);
 
                 break;
 
                 case "2":
-                Console.WriteLine("WIP");
+                Console.WriteLine("WIP"); //caminho do hubris\
                 break;
 
                 case "3":
@@ -505,6 +505,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 {Valores.Vida = Valores.Vida-1;
                 Console.WriteLine($"{ReceberDano} {stats[2]}");
                 Morte.Morrando();}
+                Console.ReadKey(); Console.Clear();
                 break;
 
                 case "4": S = 2; TelaStats.Statando();Console.Clear(); break;
