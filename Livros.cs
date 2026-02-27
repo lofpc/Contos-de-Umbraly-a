@@ -40,7 +40,7 @@ public static void Filhos()
         {
             Console.WriteLine("Filhos do Crepúsculo");
             Console.WriteLine("Seguidores da compaixão que tem força o suficiente para não virar sombras.");
-            Console.WriteLine("Eles tem muitas similaridades com andarilhos oníricos e até conseguem invadir os bolsos de outros seres");
+            Console.WriteLine("Eles tem muitas similaridades com andarilhos oníricos e até conseguem invadir os bolsos oníricos de outros seres");
             Console.WriteLine("A característica mais marcante é eles se assemelharem mais e mais com sua Deusa conforme se tornam um de seus filhos");
             Console.WriteLine("Um verdadeiro desperdício de suas características físicas e oníricas aprimoradas...");
         }
@@ -58,5 +58,34 @@ public static void Fogo()
         Console.WriteLine("Sussuros incessantes ecoam em sua mente, pensamentos?");
         Console.WriteLine("Um livro criado em sua mente pela pura compreensão... Inscrito mas não escrito...");
         Console.WriteLine("Interessante.");
+    }
+public static void Verdades()
+    {
+        Console.WriteLine("Benção: Olho das Verdades");
+        Console.WriteLine("Nós obtivemos essa benção há algum tempo, esse olho possui um brilho azul suave, que (o olho) parece emanar nos arredores.");
+        Console.WriteLine("Seus portadores passados alegavam alto descomforto ao usá-lo, se a dor era mental, física ou metafórica, ainda há de ser descoberto");
+        Console.WriteLine("É dito que esse olho tem o poder de \"distinguir a realidade das ilusões.\" Mas o quão abrangente é a realidade? E quão falso é uma ilusão?");
+    }
+
+public static void Cirúrgico()
+    {
+        Console.WriteLine("Sétima cobaia: Foi tentado realizar um implante de benção, substituindo o olho dessa cobaia. Esse foi o primeiro sucesso, mas esse método não mágico é perigoso.");
+        Console.WriteLine("Décima cobaia: Prioridade máxima para desenvolver uma ferramente para esse fim. Até nos sucessos a saúde das cobaias é altamente prejudicada.");
+        Console.WriteLine("Trigésima segunda tentativa: Finalmente conseguimos desenvolver algo. Não é sem consequências, mas é definitivamente mais seguro.");
+        Console.WriteLine("Décima Terceira cobaia: Sucesso, é recomendável o uso apenas em pessoas com alta afinidade onírica.");
+    }
+
+public static void Eternidade()
+    {
+        Console.WriteLine("Eu compreendo a verdadeira natureza da Serpente do Vazio");
+        Console.WriteLine("Sendo sua rainha, o corpo dela é o mesmo de seu domínio, algo comum entre os monarcas desta estranha terra");
+        Console.WriteLine("O poder da expansão infinita... Bufuria...");
+        Console.WriteLine("Digno de um usurpador");
+    }
+    
+public static void Revelação()
+    {
+        Console.WriteLine("Esses olhos... eu sinto algo mudar dentro de mim");
+        Console.WriteLine("Talvez eu deva explorar meus arredores com mais cuidado..."); Console.ReadKey(); Console.Clear();
     }
 }

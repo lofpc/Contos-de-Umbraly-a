@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using System.Transactions;
 using System.Xml;
 using árvore;
@@ -564,7 +566,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                         Console.ReadKey();
                                         break;
 
-                                        case true: //adicionar depois!!!!!
+                                        case true: //adicionar porta final depois!!!!!
 
                                         break;
                                     }
@@ -579,13 +581,154 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                         Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status"); Console.WriteLine("5 - Conhecimentos");
                                         switch(Console.ReadLine())
                                         {
-                                            case "1":
+                                            case "1": //mesa
+                                            Console.WriteLine("Você fica diante de uma mesa metálica surpreendentemente organizada.");
+                                            Console.WriteLine("Na parede acima dela há um tipo de diagrama.");
+                                            Console.WriteLine("Enquanto algum tipo de mecanismo está diante de você, com ferramentas cirúrgicas ao lado.");
+                                            Console.WriteLine("O que eu devo fazer?"); Console.WriteLine("1 - Olhar o diagrama"); Console.WriteLine("2 - Fazer cirurgia"); Console.WriteLine("3 - Retornar");
+                                            switch(Console.ReadLine())
+                                            {
+                                                case "1": //diagrama
+                                                switch (Valores.olho)
+                                                {
+                                                    case false:
+                                                    Console.WriteLine("Você vê o diagrama da Serpente do Abismo cercando as florestas.");
+                                                    Console.WriteLine("Várias serpentes menores saem de diversas partes do seu corpo com presas brilhantes.");
+                                                    Console.WriteLine("Dentro da serpente maior, há também um núcleo menor de várias serpentes se devorando.");
+                                                    Console.WriteLine("A legenda dita:\"A teoria mais aceita atualmente é que a Serpente do Abismo é um coletivo de ambições.\"");
+                                                    break;
+
+                                                    case true:
+                                                    Console.WriteLine("É um desenho complexo de várias serpentes"); Console.ReadKey();
+                                                    Console.WriteLine("Se eu conseguisse tirar compreensão disso...");
+                                                    switch(Console.ReadLine())
+                                                        {
+                                                            case "Ixybil":
+                                                            SC.CastTrade();
+                                                            Console.Clear();
+                                                            Livros.Eternidade(); Console.ReadKey();
+                                                            Conhecido.sabedorias.Add ("Bufuria, Ciclo da eternidade"); 
+                                                            break;
+                                                        }
+                                                        Console.ReadKey();
+                                                    break;
+                                                }
+                                                break;
+                                                
+                                                case "2": //cirurgia
+                                                if (Valores.olho == true)
+                                                {Console.WriteLine("Eu prefiro sair daqui.");
+                                                    break;}
+
+                                                switch (Valores.olhobruto) //continuar daqui depois 27/02/26
+                                                {
+                                                    case false:
+                                                    Console.WriteLine("Você não tem nada para fazer aqui.");
+                                                    break;
+
+                                                    case true:
+                                                    Console.WriteLine("Você encara o olho que encontrou anteriormente...");
+                                                    Console.WriteLine("Eu preciso fazer isso... Talvez me ajude a escapar daqui");
+                                                    Console.WriteLine("Você se depara com duas opções, usar a ferramenta ou tentar fazer o transplante em si mesmo");
+                                                    Console.WriteLine("O que você deseja?"); Console.WriteLine("1 - Utilizar a ferramenta (Observação CD 16)"); Console.WriteLine("2 - Moda antiga (Força CD 17)"); Console.WriteLine("3 - Retornar");
+                                                    switch(Console.ReadLine())
+                                                    {
+                                                        case "1": //ferramenta
+                                                        Valores.CDteste = 16;
+                                                        D20s.dadoobs();
+                                                        switch (Valores.sucesso)
+                                                        {
+                                                            case false:
+                                                            Valores.pontostats[2] = Valores.pontostats[2] - 2;
+                                                            dano.Definhamento.DefMen();
+                                                            dano.Definhamento.DefMen();
+                                                            Console.WriteLine("\"Você sente parte de sua mente sendo derretida...\"");
+                                                            Console.WriteLine("\"Seu olho é trocado pelo olho que encontrou... mesmo tendo sido doloroso\"");
+                                                            Valores.Vida = Valores.Vida - 1; Morte.Morrando();
+                                                            Valores.olho = true;
+                                                            Livros.Revelação();
+                                                            break;
+
+                                                            case true:
+                                                            Valores.pontostats[3] = Valores.pontostats[3] + 1;
+                                                            Console.WriteLine("\"Você consegue substituir seu olho sem muita dificuldade...\"");
+                                                            Valores.olho = true;
+                                                            Livros.Revelação();   
+                                                            break;
+                                                        }
+                                                        break;
+
+                                                        case "2": //cirurgia
+                                                        Valores.CDteste = 17;
+                                                        D20s.dadofor();
+                                                        switch(Valores.sucesso)
+                                                        {
+                                                            case false:
+                                                            Valores.Vida = Valores.Vida - 2;
+                                                            Morte.Morrando();
+                                                            Console.WriteLine("Eu não conhece bem as ferramentas...");
+                                                            Console.WriteLine("Então você decide que não precisa delas, você tem mãos afinal de contas");
+                                                            Console.WriteLine("Após horas de arranhar e enfiar seus dedos em seu antigo olho você consegue fazer espaço para o novo");
+                                                            Console.WriteLine("\"Você finalmente consegue encaixar o novo olho, sua visão turva com sangue...\"");
+                                                            Valores.pontostats[3] = Valores.pontostats[3] - 1;
+                                                            dano.Definhamento.DefObs();
+                                                            Valores.olho = true;
+                                                            Livros.Revelação();
+                                                            break;
+
+                                                            case true:
+                                                            Valores.Vida = Valores.Vida - 1;
+                                                            Morte.Morrando();
+                                                            Console.WriteLine("Você pega as ferramentas com pouca aptidão");
+                                                            Console.WriteLine("Você faz o procedimento em si mesmo de forma bruta, não demora muito, mas é certamente doloroso");
+                                                            Console.WriteLine("Embora o descomforto de cortar seu olho fora esteja latejando sua cabeça, o espaço é perfeito para o novo");
+                                                            Console.WriteLine("\"Seu novo olho entra sem muita dificuldade\"");
+                                                            Valores.olho = true;
+                                                            Livros.Revelação();
+                                                            break;
+                                                        }
+                                                        break;
+
+                                                        case "3": //retorno
+                                                        break;
+                                                    }
+                                                    break;
+                                                }
+                                                break;
+
+                                                case "3": //retorno
+                                                break;
+                                            }
                                             break;
 
-                                            case "2":
+                                            case "2": //anotações
+                                            Console.Clear();
+                                            Console.WriteLine("Você encontra duas notas espalhadas pelo chão."); Console.ReadKey();
+                                            Console.WriteLine("Algumas delas estão manchadas com uma substância ressecada.");
+                                            Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Nota manchada de sangue."); Console.WriteLine("2 - Nota escondida na estante."); Console.WriteLine("3 - Retornar.");
+                                            switch(Console.ReadLine())
+                                            {
+                                                case "1":
+                                                Console.Clear();
+                                                Livros.Cirúrgico();
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                break;
+
+                                                case "2":
+                                                Console.Clear();
+                                                Livros.Verdades();
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                break;
+
+                                                case "3":
+                                                break;
+                                            }
                                             break;
 
                                             case "3":
+                                            Console.WriteLine("Você decide sair dessa sala grotescamente asséptica"); Console.ReadKey(); Console.Clear();
                                             break;
 
                                             case "4":

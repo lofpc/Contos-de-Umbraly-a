@@ -14,4 +14,11 @@ Valores.casting.Add(Console.ReadLine().ToUpper());
 foreach (var cast in Valores.casting)
 {
     Console.WriteLine($"\"{cast}\"");}
-}}
+}
+    public static void CastTrade()
+    {
+        Valores.pontostats[3] = Valores.pontostats[3] - 1;
+        dano.Definhamento.DefObs();
+        Valores.pontostats[3] = Valores.pontostats[3] + 1;
+    }
+}
