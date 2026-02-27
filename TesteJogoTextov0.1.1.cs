@@ -546,7 +546,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             Console.WriteLine("Uma cortina circular roxa paira de um teto invisível no centro da biblioteca, se estendendo para cima até você não enxergar mais...");
                             Console.WriteLine("Dois corredores se extendem para lados opostos da sala, que de alguma forma retém o cheiro de livros novos");
                             Console.WriteLine("O que você busca?");
-                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda (WIP)"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                             switch(Console.ReadLine())
                                 {
                                     case "1":
@@ -742,7 +742,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                         }while (S3 == 1);
                                     break;  
 
-                                    case "3":
+                                    case "3": //esquerda
                                     break;  
 
                                     case "4":
