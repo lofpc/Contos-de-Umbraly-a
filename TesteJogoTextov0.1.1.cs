@@ -7,6 +7,8 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Transactions;
+using System.Xml;
 using árvore;
 using Microsoft.VisualBasic;
 //para meu eu do futuro e qualquer um que tentar ler esse código depois. As coisas tavam muito grandes e eu reduzi em troca de legibilidade. Ainda dá, com esforço. Desculpa.
@@ -24,6 +26,20 @@ public static class Conhecido
     {
         public static List <string> sabedorias = new List<string> {$""};
     }
+
+public static class Conhecimento
+    {
+        public static void Conhecimentando()
+        {   Console.Clear();
+             Console.WriteLine("\tConhecimentos:");
+                                                foreach (var sabedoria in Conhecido.sabedorias)
+                                                {
+                                                    Console.WriteLine($"{sabedoria}");
+                                                }
+                                                Console.ReadKey(); Console.Clear();
+        }
+    }
+
 public static void Main (string [] args)
 {string Nome = Valores.Nome; int mudança = Valores.mudança; int Pontos = Valores.pontos;
 int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado = Valores.dado;
@@ -42,13 +58,13 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
         do {TelaStats.Statando();Console.Clear();} while (Valores.pontos > 0);
 
         Console.WriteLine("Sua forma se manifesta lentamente..."); Console.WriteLine($"\"Entendo {Nome}... É assim que você se parece.\"");
-        Console.WriteLine("\"Poucos ainda tem esse poder aqui... essa ambição..."); Console.ReadKey();
+        Console.WriteLine("\"Poucos ainda tem esse poder aqui... essa ambição...\""); Console.ReadKey();
 
-        Console.WriteLine("\"Como o responsável por sua introdução devo lhe informar como esse mundo funciona");
+        Console.WriteLine("\"Como o responsável por sua introdução devo lhe informar como esse mundo funciona\"");
         Console.WriteLine("\"Tudo aqui é baseado em sorte... Embora há coisas que podem alterar o destino, os Status\"");
-        Console.WriteLine($"\"Por exemplo {Nome}, no seu caso seu Status Força é {Valores.pontostats[0]} e seu Mental é {Valores.pontostats[2]}");
+        Console.WriteLine($"\"Por exemplo {Nome}, no seu caso seu Status Força é {Valores.pontostats[0]} e seu Mental é {Valores.pontostats[2]}\"");
         Console.WriteLine($"\"Mas, há tambem coisas fora de nosso controle. Leis imutáveis da natureza... Por exemplo, sua Vida, que sempre começa em {Vida}\"");
-        Console.WriteLine($"\"Gostaria de testar sua sorte?\" (S = sim/N = não)"); /* teste de sorte */ 
+        Console.WriteLine($"\"Gostaria de testar sua sorte?\" (S = sim/N = não)\""); /* teste de sorte */ 
         
         do {switch(Console.ReadLine().ToUpper())
         {case "S":Console.WriteLine($"\"seu resultado foi: {número}\"");Console.WriteLine("\"Gostaria de tentar novamente?\"");número = dado.Next(1, 21);break;
@@ -362,8 +378,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 {Console.WriteLine("Você encontra um livro adicional escondido nas sombras."); Console.ReadKey();
                                                 Console.WriteLine("Um cheiro húmido e velho sai dele, suas páginas frágeis com uso repetido, e ele aparenta ser muito mais velho do que você"); Console.ReadKey();
                                                 Livros.Água();
-                                                Conhecido.sabedorias.Add("Haga, Água"); Console.WriteLine("Novo Conhecimento obtido");}}
-                                                Console.ReadKey(); Console.Clear();
+                                                Conhecido.sabedorias.Add("Haga, Água"); Console.WriteLine("Novo Conhecimento obtido");Console.ReadKey(); }}
+                                                Console.Clear();
 
                                                 Console.WriteLine("Você encontra dois livros no chão num canto escuro"); Console.ReadKey();Console.WriteLine("1 - Ixybil\n2 - Bufur");
                                                 switch(Console.ReadLine())
@@ -464,16 +480,192 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                                     case "5": //Conhecimento
                                             {
-                                                Console.WriteLine("\tConhecimentos:");
-                                                foreach (var sabedoria in Conhecido.sabedorias)
-                                                {
-                                                    Console.WriteLine($"{sabedoria}");
-                                                }
-                                                Console.ReadKey(); Console.Clear();
+                                                Conhecimento.Conhecimentando();
                                                 break;
                                             }
                                 }}while(S2 > 1);
-                Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria"); Console.ReadKey(); //continuar daqui dps das tochas
+                Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria."); Console.ReadKey();
+                Console.WriteLine("Você nota os flocos de poeira caindo de um presumido teto, embora tudo que aparente haver em cima é escuridão."); Console.ReadKey();
+                Console.WriteLine("Após subir a escadaria você chega a outra, como se as escadas não tivessem fim.");
+                Console.WriteLine("Janelas e portas permeam as paredes das escadas em lugares estranhos e sem sentido, cada uma delas levando a um lugar diferente");
+                Valores.CDteste = 14;
+                D20s.dadomen();
+                if (Valores.sucesso == true)
+                {Console.WriteLine("Todos esses lugares parecem familiar. Fragmentos e ilusões, memórias de memórias, mas nenhuma sua...");}
+                Console.WriteLine("O portão atrás de você se fecha. Não parece haver volta a partir daqui."); Console.ReadKey(); 
+                do{S2 = 1; Console.Clear();
+                 Console.WriteLine("As várias aberturas te encaram pelas paredes. O que você deseja fazer?");
+                Console.WriteLine("1 - Passagens"); Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Status"); Console.WriteLine("4 - Conhecimentos");
+                switch (Console.ReadLine())
+                {
+                    case "1": //passagens primeiro andar
+                        switch(Valores.olho)
+                        {
+                            case false:
+                            Olhotexto.Checkolhofalse();
+                            break;
+
+                            case true:
+                            Olhotexto.Checkolhotrue(); //adicionar passagens dps!!!!
+                            break;
+                        }
+ 
+                    break;
+
+                    case "2": //ir ao segundo andar
+                    Console.WriteLine("Você decide virar o canto e continuar subindo as escadas..."); Console.ReadKey(); 
+                    do{S2 = 2; Console.Clear();
+                    Console.WriteLine("Lá você encontra mais passagens e escadas...");
+                    Console.WriteLine("Uma mesa em um canto chama sua atenção... Tem... um olho ali?");
+                    Console.WriteLine("De qualquer forma, o que você deseja fazer?");
+                    Console.WriteLine("1 - Passagens"); Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Descer as escadas"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                    switch (Console.ReadLine())
+                        {
+                            case "1": //passagens segundo andar
+                            switch(Valores.olho)
+                        {
+                            case false:
+                            Olhotexto.Checkolhofalse();
+                            break;
+
+                            case true:
+                            Olhotexto.Checkolhotrue(); //adicionar passagens dps!!!!
+                            break;
+                        }
+                            break;
+
+                            case "2": //ir ao terceiro andar
+                            Console.WriteLine("Você decide continuar subindo adiante."); Console.ReadKey(); Console.Clear();
+                            Console.WriteLine("As passagens, que se tornaram um companheiro comum nos ambientes anteriores cessam."); Console.ReadKey();
+                            Console.WriteLine("Ao terminar de subir as escadas, você encontra um tipo de biblioteca, um contraste gritante com o ambiente anterior.");
+                            Console.WriteLine("A transição entre os tijolos de pedra, e o ambiente de madeira surpreendentemente limpo, é claramente demarcada.");
+                            Console.WriteLine("Como se o próprio lugar fosse uma intrusão nessa estranha realidade."); Console.ReadKey(); 
+                            do{S2 = 3;Console.Clear();
+                            Console.WriteLine("Uma cortina circular roxa paira de um teto invisível no centro da biblioteca, se estendendo para cima até você não enxergar mais...");
+                            Console.WriteLine("Dois corredores se extendem para lados opostos da sala, que de alguma forma retém o cheiro de livros novos");
+                            Console.WriteLine("O que você busca?");
+                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                            switch(Console.ReadLine())
+                                {
+                                    case "1":
+                                    Console.Clear();
+                                    Console.WriteLine("Você abre a cortina brilhosa gentilmente, ela é suave ao toque, possivelmente feita de algum tipo de seda"); Console.ReadKey();
+                                    switch (Valores.olho)
+                                    {
+                                        case false:
+                                       
+                                        
+                                        Console.WriteLine("No meio do pequeno círculo de maciez jaz um trono, com tecidos de cor similar"); Console.ReadKey();
+                                        Console.WriteLine("Ele é adornado de runas e o símbolo das bruxas, assim como travesseiros macios.");
+                                            if (Valores.cheiro == false)
+                                            {Valores.cheiro = true; Valores.CDteste = 13; D20s.dadoobs();
+                                                if (Valores.sucesso == true)
+                                                {Console.WriteLine("Você sente um leve cheiro de queimado vindo do trono..."); Valores.pontostats[3] = Valores.pontostats[3] + 1; Console.WriteLine("Algo muda dentro de você");}}
+                                        Console.ReadKey();
+                                        break;
+
+                                        case true: //adicionar depois!!!!!
+
+                                        break;
+                                    }
+                                    break;
+
+                                    case "2":
+                                    Console.WriteLine("Você segue o corredor da direita..."); Console.ReadKey();
+                                    Console.WriteLine("Uma porta metálica e imponente entreaberta está diante de você");
+                                    Console.WriteLine("Você sente um leve cheiro de álcool etílico vindo do outro lado"); Console.ReadKey();
+                                        do {S3 = 1; 
+                                        Console.WriteLine("Ao entrar na sala você vê várias ferramentas, anotações, e diagramas");
+                                        Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status"); Console.WriteLine("5 - Conhecimentos");
+                                        switch(Console.ReadLine())
+                                        {
+                                            case "1":
+                                            break;
+
+                                            case "2":
+                                            break;
+
+                                            case "3":
+                                            break;
+
+                                            case "4":
+                                            TelaStats.Statando();
+                                            break;
+
+                                            case "5":
+                                            Conhecimento.Conhecimentando();
+                                            break;
+                                        }
+                                        }while (S3 == 1);
+                                    break;  
+
+                                    case "3":
+                                    break;  
+
+                                    case "4":
+                                    Console.WriteLine("Você decide voltar ao ambiente anterior"); Console.ReadKey(); Console.Clear();
+                                    S2 = 2;
+                                    break;  
+
+                                    case "5":
+                                    TelaStats.Statando();
+                                    break;  
+
+                                    case "6":
+                                    Conhecimento.Conhecimentando();
+                                    break;  
+                                    
+                                                                    
+                                }
+                            }while (S2 == 3);
+                            break;
+
+                            case "3": //ir ao primeiro andar
+                            Console.WriteLine("Você decide voltar ao primeiro andar"); Console.ReadKey(); Console.Clear();
+                            S2 = 1;
+                            break;
+                            
+                            case "4": //mesa
+                            switch (Valores.olhobruto)
+                            {case false:
+                            Console.WriteLine("Você se aproxima da mesa com padrão xadrez");
+                            Console.WriteLine("O cheiro metálico e a mancha escura lutam com os quadrados branco e azul claro pela sua atenção"); Console.ReadKey();
+                            Console.WriteLine("Isso sem mencionar o olho, que te encara com um brilho etéreo, como se fosse um presente de alguém, que é em torno oferecido a outro"); Console.ReadKey();
+                            Console.WriteLine("Ele te enoja tanto em cheiro, quanto em textura, mas você decide levá-lo consigo. Não que você tenha escolha...");  Console.ReadKey();
+                            Valores.olhobruto = true;
+                            break;
+                            
+                            case true:
+                            Console.WriteLine("A imagem do olho permanece em minha mente, assim como os eventos que ocorreram..."); Console.ReadKey();
+                            Console.WriteLine("Quanto controle eu realmente tenho aqui?"); Console.ReadKey();
+                            break;}
+                            
+                            break;
+
+                            case "5": //status
+                            TelaStats.Statando();
+                            break;
+
+                            case "6": //conhecimentos
+                            Conhecimento.Conhecimentando();
+                            break;                           
+                        }
+                    }while (S2 == 2);
+
+                    break;
+                    
+                    case "3": //status
+                    TelaStats.Statando();
+                    break;
+
+                    case "4": //conhecimento
+                    Conhecimento.Conhecimentando();
+                    break;          
+                }
+
+                }while(S2 == 1); 
+                
+                //continuar daqui dps das tochas
                 break;
 
                 case "4": S2 = 3; TelaStats.Statando(); Console.Clear(); break;
@@ -488,8 +680,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                 case "3":
                 S = 2;
-                Console.WriteLine("Você respira fundo e sente a névoa adentrar seu corpo novamente..."); Console.ReadKey();
-                Console.WriteLine("Você sente uma tontura forte e uma revelação"); Console.ReadKey(); Console.WriteLine("Essa névoa está comendo minha mente, não está?"); Console.ReadKey();
+                Console.WriteLine("Você respira fundo e sente a névoa adentrar seu corpo"); Console.ReadKey();
+                Console.WriteLine("Você sente uma tontura forte e uma revelação"); Console.ReadKey(); Console.WriteLine("Essa névoa está fazendo algo comigo..."); Console.ReadKey();
                 Valores.pontostats[2] = Valores.pontostats[2] - 1;
                 Valores.pontostats[3] = Valores.pontostats[3] + 1;
                 Console.WriteLine("Coisas mudam dentro de você");

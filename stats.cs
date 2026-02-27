@@ -13,7 +13,7 @@ switch(Console.ReadLine().ToUpper()){case $"FOR":
                 int.TryParse(MB, out mudança);
                     {if (mudança > Pontos) {Console.WriteLine("inválido");}
                     else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[0] = Valores.pontostats[0] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
+                    else if (Pontos >= mudança) {Valores.pontostats[0] = Valores.pontostats[0] + mudança; Valores.pontos = Valores.pontos - mudança;}} Console.Clear(); break;
 
                         case $"VEL":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Velocidade?");
@@ -21,7 +21,7 @@ switch(Console.ReadLine().ToUpper()){case $"FOR":
                 int.TryParse(MB, out mudança);
                     {if (mudança > Pontos) {Console.WriteLine("inválido");} 
                     else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança){Valores.pontostats[1] = Valores.pontostats[1] + mudança; Valores.pontos = Valores.pontos - mudança;}} break;
+                    else if (Pontos >= mudança){Valores.pontostats[1] = Valores.pontostats[1] + mudança; Valores.pontos = Valores.pontos - mudança;}} Console.Clear(); break;
 
                 case $"MEN":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Mental?");
@@ -29,7 +29,7 @@ switch(Console.ReadLine().ToUpper()){case $"FOR":
                 int.TryParse(MB, out mudança);
                     {if (mudança > Pontos) {Console.WriteLine("inválido");}
                     else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[2] = Valores.pontostats[2] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
+                    else if (Pontos >= mudança) {Valores.pontostats[2] = Valores.pontostats[2] + mudança; Valores.pontos = Valores.pontos - mudança;}} Console.Clear(); break;
 
                 case $"OBS":
                 Console.WriteLine("O quanto você deseja aumentar o stat de Observação?");
@@ -37,10 +37,10 @@ switch(Console.ReadLine().ToUpper()){case $"FOR":
                 int.TryParse(MB, out mudança);
                     {if (mudança > Pontos) {Console.WriteLine("inválido");}
                     else if (mudança < 0) {Console.WriteLine("inválido");}
-                    else if (Pontos >= mudança) {Valores.pontostats[3] = Valores.pontostats[3] + mudança; Valores.pontos = Valores.pontos - mudança;}}break;
+                    else if (Pontos >= mudança) {Valores.pontostats[3] = Valores.pontostats[3] + mudança; Valores.pontos = Valores.pontos - mudança;}} Console.Clear(); break;
 
-                default:Console.WriteLine("Inválido(Você quer uma conquista por testar meu código???)"); break;
+                default:Console.WriteLine("Inválido(Você quer uma conquista por testar meu código???)"); Console.Clear(); break;
 
                 case $"ENCERRAR":
                 Console.WriteLine("Isto irá encerrar a distribuição de status atual e você perderá seus pontos restantes (recomendado apenas para testes), está certo disso?(S = Sim/ N = Não)");
-                switch(Console.ReadLine().ToUpper()) {case "S": Valores.pontos = 0; break; case "N": break;} break;}}}
+                switch(Console.ReadLine().ToUpper()) {case "S": Valores.pontos = 0; break; case "N": break;} Console.Clear(); break;}}}
