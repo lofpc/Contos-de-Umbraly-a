@@ -88,4 +88,19 @@ public static void Revelação()
         Console.WriteLine("Esses olhos... eu sinto algo mudar dentro de mim");
         Console.WriteLine("Talvez eu deva explorar meus arredores com mais cuidado..."); Console.ReadKey(); Console.Clear();
     }
+
+public static void Diário()
+    {   
+        Console.WriteLine("\"Você encontra vários trechos desconexos de um diário.\""); Console.ReadKey();
+        Console.WriteLine("Eu finalmente consegui convencer a Ara a fazer algumas coisas pra mim. O tecido ficou bem confortável para a porta."); Console.ReadKey();
+        Console.WriteLine("Eu definitivamente não deveria tentar comer javali negro denovo. A carne da floresta tem efeitos estranhos no corpo."); Console.ReadKey();
+        Console.WriteLine("Eu não confio na matriaca. Aquela coroa dela possui algum tipo de poder..."); Console.ReadKey();
+        Console.WriteLine("O caminho da compaixão consegue mudar o mundo... Se apenas fosse possível conseguir seu poder sem fé, ele seria bem menos arriscado."); Console.ReadKey();                                                                             
+    }
+public static void POuroboros()
+    {
+        Console.WriteLine("O Projeto finalmente está completo. Ouroboros está pronto.");
+        Console.WriteLine("Desta forma eu irei conseguir acumular conhecimento infinito e empírico.");
+        Console.WriteLine("Nós, Cinza, sempre permanecerá. Meus ecos irão trazer nosso futuro.");                 
+    }
 }

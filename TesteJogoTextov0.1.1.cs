@@ -486,10 +486,11 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                             }
                                 }}while(S2 > 1);
-                Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria."); Console.ReadKey();
-                Console.WriteLine("Você nota os flocos de poeira caindo de um presumido teto, embora tudo que aparente haver em cima é escuridão."); Console.ReadKey();
-                Console.WriteLine("Após subir a escadaria você chega a outra, como se as escadas não tivessem fim.");
-                Console.WriteLine("Janelas e portas permeam as paredes das escadas em lugares estranhos e sem sentido, cada uma delas levando a um lugar diferente");
+                                Console.Clear();
+                Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria."); 
+                Console.WriteLine("Você nota os flocos de poeira caindo de um presumido teto, embora tudo que aparente haver em cima é escuridão."); 
+                Console.WriteLine("Após subir a escadaria você chega a outra, como se as escadas não tivessem fim."); Console.ReadKey();
+                Console.WriteLine("Janelas e portas permeam as paredes das escadas em lugares estranhos e sem sentido, cada uma delas levando a um lugar diferente"); Console.ReadKey();
                 Valores.CDteste = 14;
                 D20s.dadomen();
                 if (Valores.sucesso == true)
@@ -576,34 +577,37 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                     Console.WriteLine("Você segue o corredor da direita..."); Console.ReadKey();
                                     Console.WriteLine("Uma porta metálica e imponente entreaberta está diante de você");
                                     Console.WriteLine("Você sente um leve cheiro de álcool etílico vindo do outro lado"); Console.ReadKey();
-                                        do {S3 = 1; 
+                                        do {S3 = 1; Console.Clear();
                                         Console.WriteLine("Ao entrar na sala você vê várias ferramentas, anotações, e diagramas");
-                                        Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status"); Console.WriteLine("5 - Conhecimentos");
+                                        Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status");
                                         switch(Console.ReadLine())
                                         {
                                             case "1": //mesa
-                                            Console.WriteLine("Você fica diante de uma mesa metálica surpreendentemente organizada.");
+                                            Console.Clear();
+                                            Console.WriteLine("Você fica diante de uma mesa metálica surpreendentemente organizada."); Console.ReadKey();
                                             Console.WriteLine("Na parede acima dela há um tipo de diagrama.");
                                             Console.WriteLine("Enquanto algum tipo de mecanismo está diante de você, com ferramentas cirúrgicas ao lado.");
                                             Console.WriteLine("O que eu devo fazer?"); Console.WriteLine("1 - Olhar o diagrama"); Console.WriteLine("2 - Fazer cirurgia"); Console.WriteLine("3 - Retornar");
                                             switch(Console.ReadLine())
                                             {
                                                 case "1": //diagrama
+                                                Console.Clear();
                                                 switch (Valores.olho)
                                                 {
                                                     case false:
-                                                    Console.WriteLine("Você vê o diagrama da Serpente do Abismo cercando as florestas.");
+                                                    Console.WriteLine("Você vê o diagrama da Serpente do Abismo cercando as florestas."); Console.ReadKey();
                                                     Console.WriteLine("Várias serpentes menores saem de diversas partes do seu corpo com presas brilhantes.");
-                                                    Console.WriteLine("Dentro da serpente maior, há também um núcleo menor de várias serpentes se devorando.");
-                                                    Console.WriteLine("A legenda dita:\"A teoria mais aceita atualmente é que a Serpente do Abismo é um coletivo de ambições.\"");
+                                                    Console.WriteLine("Dentro da serpente maior, há também um núcleo menor de várias serpentes se devorando."); Console.ReadKey();
+                                                    Console.WriteLine("A legenda dita:\"A teoria mais aceita atualmente é que a Serpente do Abismo é um coletivo de ambições.\""); Console.ReadKey();
                                                     break;
 
                                                     case true:
                                                     Console.WriteLine("É um desenho complexo de várias serpentes"); Console.ReadKey();
                                                     Console.WriteLine("Se eu conseguisse tirar compreensão disso...");
-                                                    switch(Console.ReadLine())
+                                                    switch(Console.ReadLine().ToUpper())
                                                         {
-                                                            case "Ixybil":
+                                                            case "IXYBIL":
+                                                            Console.WriteLine("\"Sucesso...\""); Console.ReadKey();
                                                             SC.CastTrade();
                                                             Console.Clear();
                                                             Livros.Eternidade(); Console.ReadKey();
@@ -616,6 +620,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 break;
                                                 
                                                 case "2": //cirurgia
+                                                Console.Clear();
                                                 if (Valores.olho == true)
                                                 {Console.WriteLine("Eu prefiro sair daqui.");
                                                     break;}
@@ -627,8 +632,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                     break;
 
                                                     case true:
-                                                    Console.WriteLine("Você encara o olho que encontrou anteriormente...");
-                                                    Console.WriteLine("Eu preciso fazer isso... Talvez me ajude a escapar daqui");
+                                                    Console.WriteLine("Você encara o olho que encontrou anteriormente..."); Console.ReadKey();
+                                                    Console.WriteLine("Eu preciso fazer isso... Talvez me ajude a escapar daqui"); Console.ReadKey();
                                                     Console.WriteLine("Você se depara com duas opções, usar a ferramenta ou tentar fazer o transplante em si mesmo");
                                                     Console.WriteLine("O que você deseja?"); Console.WriteLine("1 - Utilizar a ferramenta (Observação CD 16)"); Console.WriteLine("2 - Moda antiga (Força CD 17)"); Console.WriteLine("3 - Retornar");
                                                     switch(Console.ReadLine())
@@ -729,20 +734,140 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                                             case "3":
                                             Console.WriteLine("Você decide sair dessa sala grotescamente asséptica"); Console.ReadKey(); Console.Clear();
+                                            S3 = 2;
                                             break;
 
                                             case "4":
                                             TelaStats.Statando();
-                                            break;
-
-                                            case "5":
-                                            Conhecimento.Conhecimentando();
                                             break;
                                         }
                                         }while (S3 == 1);
                                     break;  
 
                                     case "3": //esquerda
+                                    Console.Clear();
+                                    switch(Valores.olho){
+                                    case false:
+                                    Console.WriteLine("Você decide seguir o corredor em direção a esquerda.");
+                                    Console.WriteLine("Não há nada de significativo sobre a porta.");
+                                    Console.WriteLine("Apenas uma tranca rotatória de senha numérica de 3 digitos.");
+                                    Console.WriteLine("Você sente que deveria sair."); Console.ReadKey();
+                                    break;
+                                    
+                                    case true:
+                                    Console.WriteLine("\"Você decide seguir o corredor em direção a esquerda.\"");
+                                    Console.WriteLine("\"Não há nada de significativo sobre a porta.\"");
+                                    Console.WriteLine("\"Apenas uma tranca rotatória de senha numérica de 3 digitos.\"");
+                                    Console.WriteLine("\"Você sente que deveria sair.\""); Console.ReadKey();
+                                    Console.WriteLine("Meu olho está queimando... Eu sinto que a resposta está dentre os conhecimentos daqui..."); Console.ReadKey();
+                                    Console.WriteLine("Eu deveria tentar abrir");
+                                    switch(Console.ReadLine())
+                                    {
+                                        case "466":
+                                        Console.Clear();
+                                        Console.WriteLine("\"A porta se abre lentamente.\""); Console.ReadKey();
+                                        do{S3 = 1; Console.Clear();
+                                        Console.WriteLine("\"Diante de você se abre uma sala pequena, algo entre um escritório e um quarto, um cheiro suave de café permeia o ar.\"");
+                                        Console.WriteLine("\"Você encontra alguns livros espalhados sobre uma cama.\"");
+                                        Console.WriteLine("\"O que você deseja fazer aqui?\""); Console.WriteLine("1 - Livro manchado"); if (Valores.ouroboros == false) {Console.WriteLine("2 - ***************** (Velocidade CD 19)");} if (Valores.café == false) {Console.WriteLine("3 - Procurar algo (Observação CD 16)");} Console.WriteLine("4 - Sair");
+                                        switch(Console.ReadLine())
+                                        {
+                                            case "1":
+                                            Console.Clear();
+                                            Livros.Diário();
+                                            break;
+                                            
+                                            case "2":
+                                            if (Valores.ouroboros == false)
+                                            {Console.Clear(); Valores.ouroboros =true;
+                                            Console.WriteLine("Meu olho está ardendo... Uma nota parece brilhar de forma translúcida. Eu preciso ser rápido.");}
+                                            Valores.CDteste = 19;
+                                            D20s.dadovel();
+                                            switch(Valores.sucesso)
+                                            {
+                                                case false:
+                                                Console.WriteLine("A nota queimou em minha mão..."); Console.ReadKey();
+                                                Console.WriteLine("Seja lá o que ela é, ela sabe."); Console.ReadKey();
+                                                Console.WriteLine("Eu sinto algo me observando."); Console.ReadKey(); //botar algum efeito aqui dps !!!
+                                                Valores.ouroboros = true;
+                                                break;
+
+                                                case true:
+                                                Console.Clear();
+                                                Livros.POuroboros(); Console.ReadKey();
+                                                Console.Clear();
+                                                Console.WriteLine("Esse projeto é suspeito...");
+                                                Console.WriteLine("Será que eu realmente quero interessar ela?"); Console.ReadKey();
+                                                break;
+                                            }
+                                            break;
+
+                                            case "3":
+                                            Console.Clear();
+                                            if (Valores.café == false)
+                                            {
+                                                Valores.café = true;
+                                                Valores.CDteste = 16;
+                                                D20s.dadoobs();
+                                                switch (Valores.sucesso)
+                                                {   case true:
+                                                    Console.WriteLine("\"Você encontra o resíduo de uma substância preta e gosmenta porém, irresistível.\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Ela tem um cheiro e gosto reminiscente de cafe, com um toque de ambição e luar\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Você se sente revigorado\"");
+                                                    Valores.Vida = Valores.Vida + 1;
+                                                    break;
+
+                                                    case false:
+                                                    Console.WriteLine("\"Você após procurar muito pela fonte do cheiro consegue apenas encontrar uma pequena pilha de cinzas, embaixo de um travesseiro.\"");
+                                                    Console.WriteLine("\"Ela aparenta ser comestível, bem tão comestível quanto cinzas conseguem ser\"");
+                                                    Console.WriteLine("Será que eu deveria ingerir isso? Parece arriscado."); Console.WriteLine("S - Sim"); Console.WriteLine("N - Não");
+                                                    switch (Console.ReadLine().ToUpper())
+                                                    {
+                                                        case "S":
+                                                        Console.WriteLine("\"Tem um gosto horrível...\"");
+                                                        Console.WriteLine("\"Você sente como se seu corpo estivesse sendo incinerado.\"");
+                                                        Console.WriteLine("\"Memórias e sensações de fogo cobrem seu corpo, você decai e se revigora ao mesmo tempo.\"");
+                                                        Valores.pontostats[0] = Valores.pontostats[0] - 1;
+                                                        Valores.pontostats[1] = Valores.pontostats[1] - 1;
+                                                        Valores.pontostats[2] = Valores.pontostats[2] - 1;
+                                                        Valores.pontostats[3] = Valores.pontostats[3] - 1;
+                                                        dano.Definhamento.DefFor();
+                                                        dano.Definhamento.DefVel();
+                                                        dano.Definhamento.DefMen();
+                                                        dano.Definhamento.DefObs();
+                                                        Valores.Vida = Valores.Vida + 2;
+                                                        break;
+                                                        
+                                                        case "N":
+                                                        Console.WriteLine("Eu prefiro não comer isso.");
+                                                        break;
+
+                                                        default:
+                                                        Console.WriteLine("As cinzas se desfizeram em minhas mãos...");
+                                                        Console.WriteLine("Eu deveria ter sido mais rápido.");
+                                                        break;
+                                                    }
+                                                    
+                                                    break;
+                                                }
+                                                
+                                            }
+                                            break;
+
+                                            case "4":
+                                            Console.WriteLine("\"Você decide sair do quarto.\"");
+                                            S3 = 2;
+                                            break;
+                                        }
+                                        }while(S3 == 1);
+                                        break;
+
+                                        default:
+                                        Console.WriteLine("Eu não tenho certeza...");
+                                        Console.WriteLine("Talvez eu deva andar um pouco e voltar depois"); Console.ReadKey();
+                                        break;
+                                    }
+                                    break;}
                                     break;  
 
                                     case "4":
@@ -769,11 +894,12 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             break;
                             
                             case "4": //mesa
+                            Console.Clear();
                             switch (Valores.olhobruto)
                             {case false:
-                            Console.WriteLine("Você se aproxima da mesa com padrão xadrez");
+                            Console.WriteLine("Você se aproxima da mesa com padrão xadrez"); Console.ReadKey();
                             Console.WriteLine("O cheiro metálico e a mancha escura lutam com os quadrados branco e azul claro pela sua atenção"); Console.ReadKey();
-                            Console.WriteLine("Isso sem mencionar o olho, que te encara com um brilho etéreo, como se fosse um presente de alguém, que é em torno oferecido a outro"); Console.ReadKey();
+                            Console.WriteLine("Isso sem mencionar o olho, que te encara com um brilho etéreo, como se fosse um presente de alguém, que é em torno oferecido a outro"); 
                             Console.WriteLine("Ele te enoja tanto em cheiro, quanto em textura, mas você decide levá-lo consigo. Não que você tenha escolha...");  Console.ReadKey();
                             Valores.olhobruto = true;
                             break;
