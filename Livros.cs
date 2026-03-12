@@ -103,4 +103,12 @@ public static void POuroboros()
         Console.WriteLine("Desta forma eu irei conseguir acumular conhecimento infinito e empírico.");
         Console.WriteLine("Nós, Cinza, sempre permanecerá. Meus ecos irão trazer nosso futuro.");                 
     }
+public static void Vento()
+    {
+        Console.WriteLine("Palavra de sopro:Phyzze");
+        Console.WriteLine("AMBIÇÃO. CONSUMIR.");
+        Console.WriteLine("AMBIÇÃO. TOMAR.");
+        Console.WriteLine("AMBIÇÃO. LIVRE.");
+        Console.WriteLine("AMBIÇÃO. VOAR."); Console.ReadKey();
+    }
 }

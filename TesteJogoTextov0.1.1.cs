@@ -3,6 +3,8 @@ using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Security.AccessControl;
@@ -47,9 +49,7 @@ public static void Main (string [] args)
 int Vida = Valores.Vida; bool Testedesorte = Valores.Testedesorte; Random dado = Valores.dado;
 int número = Valores.número; ; List<string> stats = Valores.stats;
 List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usados
-        
         Console.WriteLine("Contos de Umbraly'a"); //Título
-        
         Console.WriteLine("Aperte qualquer tecla pra continuar"); Console.ReadKey(); Console.Clear(); Console.WriteLine("\n \"Bem-vindo...\"");
         
         Console.WriteLine("\"Qual seria seu nome?\""); Nome = Console.ReadLine(); //se não tá quebrado n tem pq consertar... não ainda ao menos :P
@@ -255,22 +255,21 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Você está diante da Estrela da Compaixão...");
                 Console.WriteLine("1 - Se ajoelhar.");
                 switch(Console.ReadLine())
-                {case "1":
-                Console.WriteLine("Você cai de joelhos, a pressão dentro de sua cabeça é forte demais...");
-                break;
-                
-                default:
+                {default:
                 Console.WriteLine("Você cai de joelhos, a pressão dentro de sua cabeça é forte demais...");
                 break;}
                 Console.ReadKey(); Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Você não é daqui. Veio de longe. Viu meu reino decaído. Banido do sol...\""); Console.ReadKey();
-                Console.WriteLine("\"Um lugar triste. Vazio. Apenas sombras.\""); Console.ReadKey();
-                Console.WriteLine("A corrente de ideias não para de entrar em sua cabeça...");
+                Console.WriteLine("\"Um lugar triste. Vazio. Apenas sombras.\""); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("A corrente de ideias não para de entrar em sua cabeça..."); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Você deseja abrigo? Posso lhe dar. Junte se a nós. Dentre as sombras...\""); Console.ReadKey();
-                do{S3 = 0;
-                Console.WriteLine("O que você deseja?"); Console.WriteLine("1 - Aceite a maior piedade.\n2 - Lutar contra o destino.");
+                do{S3 = 0; Console.Clear();
+                Console.WriteLine("\"O que você deseja?\""); Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("1 - Aceitar a maior piedade.\n2 - Lutar contra o destino.");
                 switch(Console.ReadLine())
                 {case "1":
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Pois bem...\"");
                 Console.WriteLine("Uma luz roxa te envolve..."); Console.ReadKey();
                 Console.WriteLine("Você sente sua forma se desfazendo... \"Sem corpo você não pode ser julgado...\"");Console.ReadKey();
@@ -290,10 +289,11 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 S3 = 2;}
 
                 else if (Valores.fé >= 2)
-                {Console.WriteLine("\"Você deseja lutar contra o destino?\"");Console.ReadKey(); Console.Clear();
+                {Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("\"Você deseja lutar contra o destino?\"");Console.ReadKey(); Console.Clear();
                 Console.WriteLine("\"É impossível. A NOSSA natureza é definida no momento em que NÓS nascemos...\"");Console.ReadKey();
                 Console.WriteLine("\"A não ser claro, que você queira tomar meu lugar?\"");Console.ReadKey();
-                Console.WriteLine("\"Pois bem...\"");Console.ReadKey();
+                Console.WriteLine("\"Pois bem...\"");Console.ReadKey(); Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("A figura dentro da luz desaparece em penas negras...");Console.ReadKey();
                 Console.WriteLine("A estrela outrora brilhante e púrpura se abre como um abraço ardente...");Console.ReadKey();
                 Console.WriteLine("Ao entrar nela, você sente seu corpo inteiro queimar... Uma sonolência toma conta de seu ser e você se agarra à uma fagulha de fé");Console.ReadKey();
@@ -490,15 +490,23 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Do outro lado do portão de pedra você encontra um corredor escuro levando a uma escadaria."); 
                 Console.WriteLine("Você nota os flocos de poeira caindo de um presumido teto, embora tudo que aparente haver em cima é escuridão."); 
                 Console.WriteLine("Após subir a escadaria você chega a outra, como se as escadas não tivessem fim."); Console.ReadKey();
-                Console.WriteLine("Janelas e portas permeam as paredes das escadas em lugares estranhos e sem sentido, cada uma delas levando a um lugar diferente"); Console.ReadKey();
+                Console.WriteLine("Janelas permeam as paredes das escadas em lugares estranhos e sem sentido, cada uma delas levando a um lugar diferente"); Console.ReadKey();
                 Valores.CDteste = 14;
                 D20s.dadomen();
                 if (Valores.sucesso == true)
                 {Console.WriteLine("Todos esses lugares parecem familiar. Fragmentos e ilusões, memórias de memórias, mas nenhuma sua...");}
                 Console.WriteLine("O portão atrás de você se fecha. Não parece haver volta a partir daqui."); Console.ReadKey(); 
                 do{S2 = 1; Console.Clear();
-                 Console.WriteLine("As várias aberturas te encaram pelas paredes. O que você deseja fazer?");
-                Console.WriteLine("1 - Passagens"); Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Status"); Console.WriteLine("4 - Conhecimentos");
+                Console.WriteLine("As várias imagens te encaram pelas paredes. O que você deseja fazer?");
+                switch (Valores.olho)
+                {case false:
+                Console.WriteLine("1 - Janelas.");
+                break;
+                
+                case true:
+                Console.WriteLine("1 - Passagens.");
+                break;}
+                Console.WriteLine("2 - Subir as escadas."); Console.WriteLine("3 - Status."); Console.WriteLine("4 - Conhecimentos.");
                 switch (Console.ReadLine())
                 {
                     case "1": //passagens primeiro andar
@@ -509,7 +517,91 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             break;
 
                             case true:
+                            Valores.passagensvalor = 1;
                             Olhotexto.Checkolhotrue(); //adicionar passagens dps!!!!
+                            Console.WriteLine("\t\tPASSAGENS:");
+                            Console.WriteLine("Qualquer");
+                            Console.WriteLine("Sair");
+                            foreach (var passage in Valores.listapassagens)
+                            {
+                                Console.WriteLine($"{passage}");
+                            }
+                            Console.WriteLine("\"Qual passagem você deseja entrar?\"");
+                            switch(Console.ReadLine().ToUpper())
+                            {
+                                case "QUALQUER":
+                                D20s.dadopassagens();
+                                break;
+
+                                case "FLORESTA":
+                                switch(Valores.listapassagens.Contains("FLORESTA"))
+                                {   case true:
+                                    Olhotexto.Floresta();
+                                    break;
+
+                                    case false:
+                                    Console.WriteLine("Inválido.");
+                                    break;
+                                }
+                                break;
+
+                                case "SOMBRAS":
+                                switch(Valores.listapassagens.Contains("SOMBRAS"))
+                                {   case true:
+                                    Olhotexto.Sombras();
+                                    break;
+
+                                    case false:
+                                    Console.WriteLine("Inválido.");
+                                    break;
+                                }
+                                break;
+
+                                case "ENTERRO":
+                                switch(Valores.listapassagens.Contains("ENTERRO"))
+                                {
+                                    case true:
+                                    Olhotexto.enterro();
+                                    break;
+
+                                    case false:
+                                    Console.WriteLine("Inválido.");
+                                    break;   
+                                }
+                                break;
+
+                                case "CASA":
+                                switch(Valores.listapassagens.Contains("CASA"))
+                                {
+                                    case true:
+                                    Olhotexto.casa();
+                                    break;
+
+                                    case false:
+                                    Console.WriteLine("Inválido.");
+                                    break;
+                                }
+                                break;
+
+                                case "VIDENTE":
+                                switch(Valores.listapassagens.Contains("VIDENTE"))
+                                {
+                                    case true:
+                                    Olhotexto.casa();
+                                    break;
+
+                                    case false:
+                                    Console.WriteLine("Inválido.");
+                                    break;
+
+                                    
+                                }
+                                break;
+
+                                default:
+                                Console.WriteLine("É melhor eu voltar depois.");
+                                break;
+                            }
                             break;
                         }
  
@@ -518,10 +610,18 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                     case "2": //ir ao segundo andar
                     Console.WriteLine("Você decide virar o canto e continuar subindo as escadas..."); Console.ReadKey(); 
                     do{S2 = 2; Console.Clear();
-                    Console.WriteLine("Lá você encontra mais passagens e escadas...");
+                    Console.WriteLine("Lá você encontra mais imagens e escadas...");
                     Console.WriteLine("Uma mesa em um canto chama sua atenção... Tem... um olho ali?");
                     Console.WriteLine("De qualquer forma, o que você deseja fazer?");
-                    Console.WriteLine("1 - Passagens"); Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Descer as escadas"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                    switch (Valores.olho)
+                    {case false:
+                    Console.WriteLine("1 - Janelas.");
+                    break;
+                
+                    case true:
+                    Console.WriteLine("1 - Passagens. (WIP)");
+                    break;}
+                    Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Descer as escadas"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                     switch (Console.ReadLine())
                         {
                             case "1": //passagens segundo andar
@@ -532,6 +632,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             break;
 
                             case true:
+                            Valores.passagensvalor = 2;
                             Olhotexto.Checkolhotrue(); //adicionar passagens dps!!!!
                             break;
                         }
@@ -547,7 +648,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             Console.WriteLine("Uma cortina circular roxa paira de um teto invisível no centro da biblioteca, se estendendo para cima até você não enxergar mais...");
                             Console.WriteLine("Dois corredores se extendem para lados opostos da sala, que de alguma forma retém o cheiro de livros novos");
                             Console.WriteLine("O que você busca?");
-                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda (WIP)"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                             switch(Console.ReadLine())
                                 {
                                     case "1":
@@ -655,6 +756,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                             break;
 
                                                             case true:
+                                                            Valores.interesse = Valores.interesse + 5;
                                                             Valores.pontostats[3] = Valores.pontostats[3] + 1;
                                                             Console.WriteLine("\"Você consegue substituir seu olho sem muita dificuldade...\"");
                                                             Valores.olho = true;
@@ -682,6 +784,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                             break;
 
                                                             case true:
+                                                            Valores.interesse = Valores.interesse + 2;
                                                             Valores.Vida = Valores.Vida - 1;
                                                             Morte.Morrando();
                                                             Console.WriteLine("Você pega as ferramentas com pouca aptidão");
@@ -786,10 +889,12 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                             switch(Valores.sucesso)
                                             {
                                                 case false:
+                                                Console.BackgroundColor = ConsoleColor.DarkGray;
                                                 Console.WriteLine("A nota queimou em minha mão..."); Console.ReadKey();
                                                 Console.WriteLine("Seja lá o que ela é, ela sabe."); Console.ReadKey();
                                                 Console.WriteLine("Eu sinto algo me observando."); Console.ReadKey(); //botar algum efeito aqui dps !!!
                                                 Valores.ouroboros = true;
+                                                Console.BackgroundColor = ConsoleColor.Black;
                                                 break;
 
                                                 case true:

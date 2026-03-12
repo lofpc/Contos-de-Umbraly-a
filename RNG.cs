@@ -1,4 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
+using jogo;
 
 public static partial class RNG //Sistema de RNG 
 {public static void RNGando() 
@@ -76,6 +77,73 @@ public static partial class D20s
             Console.WriteLine($"Seu resultado foi: {Valores.número} + {Valores.pontostats[3]}");
             Console.WriteLine("Fracasso...");
             Valores.sucesso = false;
+        }
+    }
+
+    public static void dadopassagens()
+    {
+        Valores.númeropassagem = Valores.dadopass.Next(1, 6);
+        switch(Valores.númeropassagem)
+        {
+            case 1:
+            switch (Valores.passagensvalor)
+                {
+                    case 1:
+                    Olhotexto.Floresta();
+                    break;
+
+                    case 2:
+                    break;
+                }
+            break;
+
+            case 2:
+            switch (Valores.passagensvalor)
+                {
+                    case 1:
+                    Olhotexto.enterro();
+                    break;
+
+                    case 2:
+                    break;
+                }
+            break;
+
+            case 3:
+            switch (Valores.passagensvalor)
+                {
+                    case 1:
+                    Olhotexto.casa();
+                    break;
+
+                    case 2:
+                    break;
+                }
+            break;
+
+            case 4:
+            switch (Valores.passagensvalor)
+                {
+                    case 1:
+                    Olhotexto.Sombras();
+                    break;
+
+                    case 2:
+                    break;
+                }
+            break;
+
+            case 5:
+            switch (Valores.passagensvalor)
+                {
+                    case 1:
+                    Olhotexto.vidente();    
+                    break;
+
+                    case 2:
+                    break;
+                }
+            break;
         }
     }
 }
