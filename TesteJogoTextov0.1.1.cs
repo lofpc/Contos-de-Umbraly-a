@@ -264,9 +264,19 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("\"Um lugar triste. Vazio. Apenas sombras.\""); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("A corrente de ideias não para de entrar em sua cabeça..."); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Você deseja abrigo? Posso lhe dar. Junte se a nós. Dentre as sombras...\""); Console.ReadKey();
-                do{S3 = 0; Console.Clear();
-                Console.WriteLine("\"O que você deseja?\""); Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("1 - Aceitar a maior piedade.\n2 - Lutar contra o destino.");
+                do{S3 = 0; Console.Clear(); Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\"O que você deseja?\""); 
+                Console.WriteLine("1 - Aceitar a maior piedade.");
+                switch (Valores.fé)
+                {
+                    case < 2:
+                    Console.WriteLine("2 - *********************.");
+                    break;
+                    
+                    case >= 2:
+                    Console.WriteLine("2 - Lutar contra o destino.");
+                    break;
+                }
                 switch(Console.ReadLine())
                 {case "1":
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -285,10 +295,10 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 
                 case "2":
                 if (Valores.fé < 2)
-                {Console.WriteLine("É impossível...");
+                {Console.WriteLine("É impossível..."); Console.ReadKey();
                 S3 = 2;}
 
-                else if (Valores.fé >= 2)
+                else if (Valores.fé == 2)
                 {Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Você deseja lutar contra o destino?\"");Console.ReadKey(); Console.Clear();
                 Console.WriteLine("\"É impossível. A NOSSA natureza é definida no momento em que NÓS nascemos...\"");Console.ReadKey();
@@ -619,7 +629,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                     break;
                 
                     case true:
-                    Console.WriteLine("1 - Passagens. (WIP)");
+                    Console.WriteLine("1 - Passagens.");
                     break;}
                     Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Descer as escadas"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                     switch (Console.ReadLine())
@@ -634,6 +644,72 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             case true:
                             Valores.passagensvalor = 2;
                             Olhotexto.Checkolhotrue(); //adicionar passagens dps!!!!
+                            Console.WriteLine("\t\tPASSAGENS:");
+                            Console.WriteLine("Qualquer");
+                            Console.WriteLine("Sair");
+                            foreach (var passage in Valores.listapassagens)
+                            {
+                                Console.WriteLine($"{passage}");
+                            }
+                            Console.WriteLine("\"Qual passagem você deseja entrar?\"");
+                            switch(Console.ReadLine().ToUpper())
+                            {
+                                case "QUEDA":
+                                switch(Valores.listapassagens.Contains("QUEDA"))
+                                {case true:
+                                Olhotexto.Queda();
+                                break;
+                                
+                                case false:
+                                Console.WriteLine("Inválido.");
+                                break;}
+                                break;
+
+                                case "FORJA":
+                                switch(Valores.listapassagens.Contains("FORJA"))
+                                {case true:
+                                Olhotexto.Forja();
+                                break;
+                                
+                                case false:
+                                Console.WriteLine("Inválido.");
+                                break;}
+                                break;
+
+                                case "LUAR":
+                                switch(Valores.listapassagens.Contains("LUAR"))
+                                {case true:
+                                Olhotexto.Luar();
+                                break;
+                                
+                                case false:
+                                Console.WriteLine("Inválido.");
+                                break;}
+                                break;
+
+                                case "MAUSOLÉU":
+                                switch(Valores.listapassagens.Contains("MAUSOLÉU"))
+                                {case true:
+                                Olhotexto.Mausoléu();
+                                break;
+                                
+                                case false:
+                                Console.WriteLine("Inválido.");
+                                break;}
+                                break;
+
+                                case "LUGAR":
+                                switch(Valores.listapassagens.Contains("LUGAR"))
+                                {case true:
+                                Olhotexto.LUGAR();
+                                break;
+                                
+                                case false:
+                                Console.WriteLine("Inválido.");
+                                break;}
+                                break;
+                                
+                            }
                             break;
                         }
                             break;
@@ -712,7 +788,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                             SC.CastTrade();
                                                             Console.Clear();
                                                             Livros.Eternidade(); Console.ReadKey();
-                                                            Conhecido.sabedorias.Add ("Bufuria, Ciclo da eternidade"); 
+                                                            Conhecido.sabedorias.Add ("Bufuria, Ciclo da eternidade");
+                                                            Valores.interesse = Valores.interesse + 5; 
                                                             break;
                                                         }
                                                         Console.ReadKey();
@@ -760,7 +837,8 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                             Valores.pontostats[3] = Valores.pontostats[3] + 1;
                                                             Console.WriteLine("\"Você consegue substituir seu olho sem muita dificuldade...\"");
                                                             Valores.olho = true;
-                                                            Livros.Revelação();   
+                                                            Livros.Revelação();
+                                                            Valores.interesse = Valores.interesse + 5;   
                                                             break;
                                                         }
                                                         break;
@@ -791,6 +869,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                             Console.WriteLine("Você faz o procedimento em si mesmo de forma bruta, não demora muito, mas é certamente doloroso");
                                                             Console.WriteLine("Embora o descomforto de cortar seu olho fora esteja latejando sua cabeça, o espaço é perfeito para o novo");
                                                             Console.WriteLine("\"Seu novo olho entra sem muita dificuldade\"");
+                                                            Valores.interesse = Valores.interesse + 1;
                                                             Valores.olho = true;
                                                             Livros.Revelação();
                                                             break;
@@ -867,6 +946,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                     switch(Console.ReadLine())
                                     {
                                         case "466":
+                                        Valores.interesse = Valores.interesse - 5;
                                         Console.Clear();
                                         Console.WriteLine("\"A porta se abre lentamente.\""); Console.ReadKey();
                                         do{S3 = 1; Console.Clear();
@@ -895,6 +975,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                 Console.WriteLine("Eu sinto algo me observando."); Console.ReadKey(); //botar algum efeito aqui dps !!!
                                                 Valores.ouroboros = true;
                                                 Console.BackgroundColor = ConsoleColor.Black;
+                                                Valores.interesse = Valores.interesse + 100;
                                                 break;
 
                                                 case true:

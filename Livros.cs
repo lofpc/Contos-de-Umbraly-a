@@ -56,8 +56,8 @@ public static void Fogo()
     {
         Console.WriteLine("Palavra base:Fol'ho");
         Console.WriteLine("Sussuros incessantes ecoam em sua mente, pensamentos?");
-        Console.WriteLine("Um livro criado em sua mente pela pura compreensão... Inscrito mas não escrito...");
-        Console.WriteLine("Interessante.");
+        Console.WriteLine("Um livro criado em sua mente pela pura compreensão... Inscrito mas não escrito... Usurpado da própria razão.");
+        Console.WriteLine("Interessante, mas falho.");
     }
 public static void Verdades()
     {
@@ -110,5 +110,21 @@ public static void Vento()
         Console.WriteLine("AMBIÇÃO. TOMAR.");
         Console.WriteLine("AMBIÇÃO. LIVRE.");
         Console.WriteLine("AMBIÇÃO. VOAR."); Console.ReadKey();
+    }
+public static void Corrupção()
+    {
+        Console.WriteLine("Palavra de corrupção:Kssamnyra");
+        Console.WriteLine("AMBIÇÃO. CONSUMIR");
+        Console.WriteLine("AMBIÇÃO. TOMAR.");
+        Console.WriteLine("AMBIÇÃO. VERDADEIRA.");
+        Console.WriteLine("AMBIÇÃO. USURPAR.");Console.ReadKey();
+    }
+public static void Embaralhada()
+    {
+        Console.WriteLine("AMNENRML\nALEROMQP\nJHERKLMO\nQWORMPUC\nAETMNGSX\nLYOTPMNR\nTUZTXVCZ\nJÇLMNRTK");
+    }
+public static void Furos()
+    {
+        Console.WriteLine("@@@@@@@@\n@@@@@@@O\n@O@@@@@@\n@@@@@@@@\n@O@@@@O@\n@@@@@@@@\n@@@O@@@@\n@@@@@@@@");
     }
 }

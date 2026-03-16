@@ -93,6 +93,7 @@ public static partial class D20s
                     break;
 
                     case 2:
+                    Olhotexto.Queda();
                     break;
                 }
             break;
@@ -105,6 +106,7 @@ public static partial class D20s
                     break;
 
                     case 2:
+                    Olhotexto.Forja();
                     break;
                 }
             break;
@@ -117,6 +119,7 @@ public static partial class D20s
                     break;
 
                     case 2:
+                    Olhotexto.Luar();
                     break;
                 }
             break;
@@ -129,6 +132,7 @@ public static partial class D20s
                     break;
 
                     case 2:
+                    Olhotexto.Mausoléu();
                     break;
                 }
             break;
@@ -141,6 +145,7 @@ public static partial class D20s
                     break;
 
                     case 2:
+                    Olhotexto.LUGAR();
                     break;
                 }
             break;
