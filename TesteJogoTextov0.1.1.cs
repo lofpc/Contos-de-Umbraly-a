@@ -733,8 +733,6 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                     switch (Valores.olho)
                                     {
                                         case false:
-                                       
-                                        
                                         Console.WriteLine("No meio do pequeno círculo de maciez jaz um trono, com tecidos de cor similar"); Console.ReadKey();
                                         Console.WriteLine("Ele é adornado de runas e o símbolo das bruxas, assim como travesseiros macios.");
                                             if (Valores.cheiro == false)
@@ -745,7 +743,124 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                         break;
 
                                         case true: //adicionar porta final depois!!!!!
+                                        do{Valores.ficar = 1; Console.Clear();
+                                        Console.WriteLine("\"Esperando um trono, você parte as cortinas e encontra um portão de ferro grande em seu lugar.\""); Console.ReadKey();
+                                        Console.WriteLine("\"Você sente que essa é a reta final\""); Console.ReadKey();
+                                        switch(Valores.interesse)
+                                        {
+                                            case <= 20:
+                                            Console.WriteLine("Eu não acho que sou interessante o suficiente..."); Console.ReadKey();
+                                            break;
 
+                                            case > 20:
+                                            Console.WriteLine("Chegou a hora..."); Console.ReadKey();
+                                            break;
+                                        }
+                                        Console.WriteLine("Será que eu devo abrir a porta?\nAbrir.\nSair.");
+                                        switch(Console.ReadLine().ToUpper())
+                                        {
+                                            case "ABRIR":
+                                            Console.WriteLine("Eu abro as portas pesadas de metal."); Console.ReadKey();
+                                            switch(Valores.interesse)
+                                        {
+                                            case <= 20:
+                                            Console.WriteLine("\"Um longo corredor escuro se extende a sua frente...\""); Console.ReadKey();
+                                            Console.WriteLine("\"Você segue adiante nele...\""); Console.ReadKey();
+                                            do{S3 = 0;
+                                            Console.WriteLine("\"E andando...\""); Console.ReadKey();
+                                            S3++;
+                                            }while(S3 < 5);
+                                            Console.WriteLine("\"Você continua vagando esse corredor infinitamente.\""); Console.ReadKey();
+                                            Console.WriteLine("\"Volte quando você for mais interessante.\""); Console.ReadKey();
+                                            Environment.Exit(0);
+                                            break;
+
+                                            case > 20:
+                                            Console.WriteLine("\"Após abrir as portas, é como se a sala virasse 90 graus, e você começa a cair.\""); Console.ReadKey();
+                                            Console.WriteLine("\"Após cair cada vez mais rápido você se encontra de pé em um grande e alto corredor com arcos de pedra manchada\""); Console.ReadKey();
+                                            Console.WriteLine("Tem uma figura naquele trono de pedra..."); Console.ReadKey();
+                                            Console.BackgroundColor = ConsoleColor.DarkGray; 
+                                            Console.WriteLine("\"Olá, que aventura divertida tivemos, não é?\""); Console.ReadKey();
+                                            Console.WriteLine("\"Mas agora você está diante da Bruxa das Cinzas.\""); Console.ReadKey();
+                                            Console.Clear();
+                                            Console.WriteLine("\"Você se provou uma cobaia interessante, alto potencial onírico e instinto de descoberta.\""); Console.ReadKey();
+                                            Console.WriteLine("\"O que eu posso fazer por você?\""); Console.ReadKey();
+                                            Console.WriteLine("1 - Procurar ajuda\n2 - XVXUSDU (Arriscado.)");
+                                            switch(Console.ReadLine())
+                                            {
+                                                case "1":
+                                                Console.WriteLine("\"Então você quer ajuda para retornar à sua realidade?\""); Console.ReadKey();
+                                                Console.WriteLine("\"Pois bem.\"");
+                                                Console.WriteLine("\"Eu posso te ajudar, mas com um custo.\""); Console.ReadKey();
+                                                Console.WriteLine("\"Quando você morrer, seu conhecimento será absorvido ao meu.\""); Console.ReadKey();
+                                                Console.WriteLine("Ela abre uma porta de saída.");Console.ReadKey();
+                                                Console.WriteLine("\"Então vá, e nosso pacto será firmado.\""); Console.ReadKey();
+                                                Console.Clear(); Console.BackgroundColor = ConsoleColor.Black;
+                                                Console.WriteLine("Você entra na passagem e embora seu corpo tenha sido deformado de algumas formas, você retornar à realidade.");
+                                                Console.WriteLine("Você lentamente retorna ao seu dia a dia..."); Console.ReadKey();
+                                                Console.WriteLine("Mas seu corpo, alterado como foi, lentamente definha em seus aspectos que foram banidos deste mundo."); Console.ReadKey();
+                                                Console.WriteLine("Você aproveita a pouca vida residual que lhe resta, e eventualmente retorna como conhecimento."); Console.ReadKey();
+                                                Console.WriteLine("Que preço alto a se pagar por viver."); Console.ReadKey();
+                                                
+                                                Console.WriteLine("Final B:Pacto das cinzas.");
+                                                Console.WriteLine("Mas seria esse mesmo um final feliz?");Console.ReadKey();
+                                                Environment.Exit(0);
+                                                break;
+
+                                                case "2":
+                                                Valores.casting.Clear();
+                                                Console.WriteLine("Chegou a hora...");
+                                                SC.SCast();
+                                                switch(Valores.casting.Contains("FOL'HO") && Valores.casting.Contains("KSSAMNYRA") && Valores.casting.Contains("BUFURIA"))
+                                                {
+                                                    case false:
+                                                    Console.WriteLine("\"Que tentativa fútil.\""); Console.ReadKey();
+                                                    Console.WriteLine("\"O seu corpo começa a queimar.\""); 
+                                                    Console.ReadKey();
+                                                    Console.WriteLine("\"Acabou.\""); Console.ReadKey();
+                                                    Valores.Vida = 0;
+                                                    Morte.Morrando();
+                                                    break;
+
+                                                    case true:
+                                                    Console.WriteLine("\"AAAARGH\""); Console.Beep(); Console.ReadKey();
+                                                    Console.WriteLine("Ela está queimando..."); Console.ReadKey();
+                                                    Console.WriteLine("\"SEU- EU VOU...\""); Console.ReadKey();
+                                                    Console.WriteLine("A bruxa cai de seu trono..."); Console.ReadKey();
+                                                    Console.WriteLine("\"Eu conheço esse olhar...\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Não é a cara de um corpo multilado...\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Nem de uma mente destruída...\""); Console.ReadKey();
+                                                    Console.WriteLine("\"É muito pior.. Você está pleno, não está?\""); Console.ReadKey();
+                                                    Console.WriteLine("Eu piso na cabeça dela...");
+                                                    Console.WriteLine("\"Vá em frente então. Continue mentindo que é tudo por um bem maior.\""); Console.ReadKey();
+                                                    Console.WriteLine("A Bruxa se desfaz."); Console.ReadKey();
+                                                    Console.WriteLine("As cinzas ao meu redor começam a se tornar um com o meu ser. Eu aceito o manto de Cinzas."); Console.ReadKey();
+                                                    Console.WriteLine("\"EU crio as escolhas agora.\""); Console.ReadKey(); Console.Clear();
+                                                    Console.WriteLine("\"Final S:Cinzas à cinzas.\"");
+                                                    Console.WriteLine("\"Mas seria esse mesmo um final feliz?\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Um último pensamento passa pela minha cabeça...\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Cinis, esta autoridade deve ser útil um dia.\""); Console.ReadKey();
+                                                    Environment.Exit(0);
+                                                    break;
+                                                }
+                                                break;
+                                            }
+                                            break;
+                                        }
+                                            break;
+                                            
+                                            case "SAIR":
+                                            Console.WriteLine("Melhor não por agora."); Console.ReadKey();
+                                            Valores.ficar = 0;
+                                            break;
+
+                                            default:
+                                            Console.WriteLine("Inválido."); Console.ReadKey();
+                                            break;
+                                        }
+                                        
+                                        
+                                        }while(Valores.ficar == 1);
                                         break;
                                     }
                                     break;
@@ -1083,7 +1198,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             Console.Clear();
                             switch (Valores.olhobruto)
                             {case false:
-                            Console.WriteLine("Você se aproxima da mesa com padrão xadrez"); Console.ReadKey();
+                            Console.WriteLine("Você se aproxima da mesa com padrão xadrez"); Console.ReadKey(); Valores.interesse = Valores.interesse + 2;
                             Console.WriteLine("O cheiro metálico e a mancha escura lutam com os quadrados branco e azul claro pela sua atenção"); Console.ReadKey();
                             Console.WriteLine("Isso sem mencionar o olho, que te encara com um brilho etéreo, como se fosse um presente de alguém, que é em torno oferecido a outro"); 
                             Console.WriteLine("Ele te enoja tanto em cheiro, quanto em textura, mas você decide levá-lo consigo. Não que você tenha escolha...");  Console.ReadKey();
@@ -1092,7 +1207,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             
                             case true:
                             Console.WriteLine("A imagem do olho permanece em minha mente, assim como os eventos que ocorreram..."); Console.ReadKey();
-                            Console.WriteLine("Quanto controle eu realmente tenho aqui?"); Console.ReadKey();
+                            Console.WriteLine("Quanto controle eu realmente tenho aqui?"); Console.ReadKey(); 
                             break;}
                             
                             break;

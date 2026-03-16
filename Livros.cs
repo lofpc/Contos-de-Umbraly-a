@@ -79,7 +79,7 @@ public static void Eternidade()
     {
         Console.WriteLine("Eu compreendo a verdadeira natureza da Serpente do Vazio");
         Console.WriteLine("Sendo sua rainha, o corpo dela é o mesmo de seu domínio, algo comum entre os monarcas desta estranha terra");
-        Console.WriteLine("O poder da expansão infinita... Bufuria...");
+        Console.WriteLine("O poder da expansão infinita... Palavra da Eternidade:Bufuria...");
         Console.WriteLine("Digno de um usurpador");
     }
     
