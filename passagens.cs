@@ -125,7 +125,7 @@ public static partial class Olhotexto
         Console.WriteLine("\"Não há mais nada para fazer aqui.\""); Console.ReadKey();
         Console.WriteLine("Tem um homem embaixo do poste");Console.ReadKey();
         Console.WriteLine("Será que eu deveria me aproximar dele? Ele me dá um sentimento estranho, especialmente aquele chapéu."); 
-        Console.WriteLine("S - Sim\nN - Não");
+        Console.WriteLine("S - Sim (Repetível) \nN - Não");
         switch(Console.ReadLine().ToUpper())
         {
             case "S":
@@ -178,7 +178,7 @@ public static partial class Olhotexto
         Console.WriteLine("\"Duas estruturas elevadas se estendem pouco acima do chão.\"");
         Console.WriteLine("\"O que você deseja fazer?\"");
 
-        Console.WriteLine("1 - Analisar a estrutura\n2 - Retornar");
+        Console.WriteLine("1 - Analisar a estrutura (Repetível)\n2 - Retornar");
         switch(Console.ReadLine())
             {
                 case "1":
@@ -296,7 +296,7 @@ public static partial class Olhotexto
                 Console.WriteLine("\"VOCÊ SABE O QUE ESTÁ ACONTECENDO AQUI NÃO É?\""); Console.ReadKey();
                 Console.WriteLine("\"DESENHE MINHA RUNA, EU COMPENSAREI. MUITA FOME.\""); Console.ReadKey();
                 do{Valores.ficar = 0;
-                Console.WriteLine("O que fazer?\n1 - Desenhar a runa.\n2 - abrir a porta");
+                Console.WriteLine("O que fazer?\n1 - Desenhar a runa. (Repetível) \n2 - abrir a porta");
                 switch(Console.ReadLine())
                 {
                     case "1":
@@ -356,7 +356,7 @@ public static partial class Olhotexto
             Console.WriteLine("Você percebe que entalhado nas costas da boneca e pingando uma substância avermelhada há uma assinatura escrito Ara & Matri."); Console.ReadKey();
             break;
         }
-        Console.WriteLine("O que eu deveria fazer?\n1 - Tocar no pote\n2 - Sair");
+        Console.WriteLine("O que eu deveria fazer?\n1 - Tocar no pote. (Repetível) \n2 - Sair.");
         switch(Console.ReadLine())
         {
             case "1":
@@ -614,7 +614,7 @@ public static void Mausoléu()
         }
         break;   
         }
-        Console.WriteLine("O que eu devo fazer aqui?\n1 - Placa de pedra.\n2 - Mural Rúnico.\n3 - Estátuas.\n4 - Sair.");
+        Console.WriteLine("O que eu devo fazer aqui?\n1 - Placa de pedra. (Repetível) \n2 - Mural Rúnico. (Repetível) \n3 - Estátuas. (Repetível) \n4 - Sair.");
         switch(Console.ReadLine())
             {
                 case "1":
@@ -664,7 +664,7 @@ public static void LUGAR()
         Console.WriteLine("\"Uma pira de outrora.\"");
         do{Valores.ficar = 1;
         Console.WriteLine("\"Saia daqui.\"");
-        Console.WriteLine("1 - Convocar magia simples.\n2 - Sair");
+        Console.WriteLine("1 - Convocar magia simples. (*********)\n2 - Sair");
         switch(Console.ReadLine())
         {
             case "1":

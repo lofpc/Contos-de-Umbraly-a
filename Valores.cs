@@ -9,5 +9,6 @@ public static List<string> stats = new List<string> {$"Força (For)","Velocidade
 public static int maior = pontostats.Max(); public static int menor = pontostats.Min(); public static int Run = 10; public static int fé = 0;public static int counter = 0; public static int amnr = 0;
 public static int ksy = 0; public static int aqua = 0; public static int revelação = 0; public static int ampliado = 0; public static int tochas = 0; public static int cálice = 0;public static List<string> casting = new List<string> {$""}; public static string? MudançaBruta;
 public static int fogando = 0; public static int CDteste = 0; public static bool sucesso; public static bool olho; public static bool olhobruto; public static bool cheiro; public static bool café; public static bool ouroboros; public static int interesse = 1; public static int ficar = 1; 
-public static List<string> listapassagens = new List<string> {$""}; public static Random dadopass = new Random(); public static int númeropassagem = dado.Next(1, 6); public static int passagensvalor; public static int javali = 1; public static int canção = 1; public static bool tontura = true; public static bool forja = false;}
+public static List<string> listapassagens = new List<string> {$""}; public static Random dadopass = new Random(); public static int númeropassagem = dado.Next(1, 6); public static int passagensvalor; public static int javali = 1; public static int canção = 1; public static bool tontura = true; public static bool forja = false;
+public static int conversa = 0; public static int agressão = 0;}
 

@@ -134,7 +134,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
             Console.WriteLine("\t \nPouco a pouco você se lembra de um trecho de uma canção antiga... \"Evite, evite, as mentiras de lá. A floresta tentará...~\"");}
             do{S = 0; Console.WriteLine("O que gostaria de fazer?"); //Escolha de caminho (1)
                 Console.WriteLine("1 - Seguir o caminho da Lua"); Console.WriteLine("2 - Seguir o caminho do Húbris (WIP)");
-                Console.WriteLine("3 - Respirar fundo"); Console.WriteLine("4 - Status");
+                Console.WriteLine("3 - Respirar fundo (Repetível)"); Console.WriteLine("4 - Status");
             switch(Console.ReadLine()){
                 case "1":
                 Console.Clear();
@@ -144,7 +144,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 int S2 = 0;
                 do{Console.WriteLine("O que gostaria de fazer?"); S2 = 0; //Escolha de caminho (2)
                 Console.WriteLine("1 - Ir em direção ao monumento");
-                Console.WriteLine("2 - Tentar interagir com uma das sombras");
+                Console.WriteLine("2 - Tentar interagir com uma das sombras (Repetível)");
                 Console.WriteLine("3 - Procurar ajuda");
                 Console.WriteLine("4 - Status");
 
@@ -204,7 +204,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Você está tão perto... O que você faz?");
                 int S3 = 0;
                 do{S3 = 0;
-                Console.WriteLine("1 - Matar ela antes que ela te perceba (Força CD:16. Arriscado)\n2 = Correr até o outro lado da sala (Velocidade CD:17. Arriscado)\n3 - Conversar com ela\n4 - Status"); //parei aqui 24/01/26 11:30.
+                Console.WriteLine("1 - Matar ela antes que ela te perceba (Força CD:16. Arriscado)\n2 = Correr até o outro lado da sala (Velocidade CD:17. Arriscado)\n3 - Conversar com ela (Arriscado) \n4 - Status"); //parei aqui 24/01/26 11:30.
                 switch (Console.ReadLine())
                 {case "1":
                 Valores.CDteste = 16;
@@ -241,10 +241,165 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Valores.fé = Valores.fé + 1;
                 Console.WriteLine("Você puxa a atenção da jovem que se levanta lentamente e segura sua espada");Console.ReadKey();
                 Console.WriteLine("\"Parado.\""); Console.WriteLine("O tom frio dela é apenas ampliado pelo ar da sala e brilho de sua lâmina");
-                Console.WriteLine("\"Antes de você entrar eu gostaria de perguntar sobre suas intenções\"");Console.ReadKey(); Console.WriteLine("Você se explica para a mulher, que mantém uma expressão solene e imutável em seu rosto pálido..."); Console.ReadKey();
-                Console.WriteLine("\"Entendo, você busca audiência e ajuda da Estrela da Compaixão... Pois bem.\"");
+                Console.WriteLine("\"Antes de você entrar eu gostaria de perguntar sobre suas intenções\"");Console.ReadKey();
+                do{Valores.ficar = 1; Console.Clear();
+                Console.WriteLine("\"O que você quer aqui?\"");
+                Console.WriteLine("1 - Audiência.\n2 - Quem é você? (Repetível)");
+                switch(Valores.conversa)
+                {
+                    case 1:
+                    Console.WriteLine("3 - Filhos do crepúsculo.");
+                    break;
+
+                    case 2:
+                    Console.WriteLine("3 - Resgate de Umbraly'a. (Repetível)");
+                    break;
+                }
+                switch(Console.ReadLine())
+                {
+                    case "1":
+                    Console.WriteLine("\"Agora, eu gostaria de fazer algumas perguntas.\"");
+                    Console.WriteLine("\"Eu irei tomar silêncio ou qualquer outra resposta como uma resposta errada.\"");
+                    Console.WriteLine("\"Primeiro, você deseja algum perigo, direto ou indireto recaia sobre a Estrela?\"");
+                    Console.WriteLine("1 - Sim.\n2 - Não.");
+                    switch(Console.ReadLine())
+                    {
+                        case "1":
+                        Console.WriteLine("\"Eu espero que isso tenha sido uma piada de mal gosto.\"");Console.ReadKey();
+                        Valores.agressão = 3;
+                        break;
+
+                        case "2":
+                        Console.WriteLine("Ela acena a cabeça silenciosamente.");Console.ReadKey();
+                        Valores.agressão--;
+                        break;
+
+                        default:
+                        Console.WriteLine("\"Resposta errada.\"");Console.ReadKey();
+                        Valores.agressão++;
+                        break;
+                    }
+                    Console.Clear();
+                    Console.WriteLine("\"Qual caminho você segue?\"");
+                    Console.WriteLine("A mulher nota sua expressão confusa e torna a falar com um suspiro.");
+                    Console.WriteLine("\"O que você mais valoriza?\"");
+                    Console.WriteLine("1 - Paz.\n2 - Sabedoria.\n3 - Vida.\n4 - Poder.\n5 - Nada.");
+                    switch(Console.ReadLine())
+                    {
+                        case "1":
+                        Console.WriteLine("\"Se o que diz é verdade, você seria um bom membro.\"");Console.ReadKey();
+                        Valores.agressão--;
+                        break;
+
+                        case "2":
+                        Console.WriteLine("\"Só não busque saber demais sobre ELA.\"");Console.ReadKey();
+                        Valores.agressão--;
+                        break;
+
+                        case "3":
+                        Console.WriteLine("\"Esse é o pensamento de animais, embora não seja errado.\"");Console.ReadKey();
+                        Valores.agressão++;
+                        break;
+
+                        case "4":
+                        Console.WriteLine("\"Para que poder sem causa? Por ter? Para destruir?\"");Console.ReadKey();
+                        Valores.agressão = Valores.agressão + 2;
+                        break;
+
+                        case "5":
+                        Console.WriteLine("Talvez você realmente não seja mais do que um andarilho.");Console.ReadKey();
+                        break;
+
+                        default:
+                        Console.WriteLine("\"Resposta errada.\"");Console.ReadKey();
+                        Valores.agressão++;
+                        break;
+                    }
+                    Console.Clear();
+                    Console.WriteLine("\"Uma última pergunta.\"");
+                    Console.WriteLine("\"O que você acha dos fracos?\"");
+                    Console.WriteLine("1 - São patéticos.\n2 - Estão cansados.\n3 - São os mais fortes.\n4 - Merecem piedade.\n5 - São vocês.");
+                    switch(Console.ReadLine())
+                    {
+                        case "1":
+                        Console.WriteLine("\"O silêncio seria uma escolha melhor.\"");Console.ReadKey();
+                        Valores.agressão = Valores.agressão + 3;
+                        break;
+
+                        case "2":
+                        Console.WriteLine("\"De fato...\"");Console.ReadKey();
+                        Valores.agressão--;
+                        break;
+
+                        case "3":
+                        Console.WriteLine("\"Quem dera essa lógica significasse algo.\"");Console.ReadKey();
+                        break;
+
+                        case "4":
+                        Console.WriteLine("\"Mais do que quaisquer outros.\"");Console.ReadKey();
+                        Valores.agressão = Valores.agressão - 2;
+                        break;
+
+                        case "5":
+                        Console.WriteLine("\"E seremos fortes um dia.\"");Console.ReadKey();
+                        Valores.agressão++;
+                        break;
+
+                        default:
+                        Console.WriteLine("\"Resposta errada.\"");Console.ReadKey();
+                        Valores.agressão++;
+                        break;
+                    }
+                    
+                    switch(Valores.agressão)
+                    {
+                        case >= 3:
+                        Console.Clear();
+                        Console.WriteLine("\"Descanse.\""); Console.ReadKey();
+                        Console.WriteLine("A mulher rapidamente se vira junta com sua espada. Lentamente, você morre... Uma morte certamente agonizante."); Console.ReadKey();
+                        Valores.Vida = 0;
+                        Morte.Morrando();
+                        break;
+                    }
+
+
+                    break;
+
+                    case "2":
+                    Console.WriteLine("\"Eu sou uma filha do crepúsculo.\""); Console.ReadKey();
+                    Console.WriteLine("Ela não parece interessada nesse assunto."); Console.ReadKey();
+                    break;
+
+                    case "3":
+                    switch(Valores.conversa)
+                {
+                    case 1:
+                    Console.WriteLine("\"Aqueles como eu, Filhos do crepúsculo, fomos salvos pela Estrela da Compaixão.\""); Console.ReadKey();
+                    Console.WriteLine("\"Embora nosso número seja pequeno e Ambições tentem tomar conta de nosso ser constantemente, nossa missão é simples.\""); Console.ReadKey();
+                    Console.WriteLine("\"Somos retentores e mãos da Estrela, agindo para que seu plano de resgate chegue ao fim.\""); Console.ReadKey();
+                    Valores.conversa = 2;
+                    break;
+
+                    case 2:
+                    Console.WriteLine("\"Nossa missão atual é arrumar um jeito de mitigar os danos aos residentes de Umbraly'a desde O Exílio.\""); 
+                    Console.WriteLine("\"Com a ajuda das bruxas mantivemos mecanismos de defesa mútua para prolongar a solução temporária da Estrela.\""); Console.ReadKey();
+                    Console.WriteLine("\"Mas seu brilho apenas alcança a extensão da cidade de Umbraly'a e nas palavras dela é uma imitação bruta da luz verdadeira.\"");
+                    Console.WriteLine("\"Os preparativos do mesmo estão quase prontos, porém, a Estrela precisa de uma fonte de energia onírica alta e um novo receptáculo com forma física e real.\"");
+                    Console.WriteLine("\"Portanto, não se admire se o que você deseja dela for impossível, coisas maiores aguardam.\""); Console.ReadKey();
+                    break;
+
+                    default:
+                    Console.WriteLine("Eu não tenho certeza do que falar."); Console.ReadKey();
+                    break;
+                }
+                    break;
+                }
+
+                }while(Valores.ficar == 1);
+
+                Console.WriteLine("\"Entendo, você deseja   audiência com a Estrela da Compaixão... Pois bem.\"");
                 Console.WriteLine("Ela abaixa a espada que brandia e se posiciona ao lado da parede. Abrindo caminho para o próximo portão"); Console.ReadKey();
-                if(Valores.fé == 2) {Console.WriteLine("\"Acho que vale a pena lhe informar...\" A mulher interrompe \"Se você almeja mais... Você está pronto...\""); Console.ReadKey();}  Console.Clear(); break;
+                if(Valores.fé == 2) {Console.WriteLine("\"Acho que vale a pena lhe informar...\" A mulher interrompe \"Você pode cumprir o papel restante, se assim desejar.\""); Console.ReadKey();}  Console.Clear(); break;
 
                 case "4": TelaStats.Statando(); Console.Clear(); S3=2; break;
 
@@ -264,19 +419,21 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("\"Um lugar triste. Vazio. Apenas sombras.\""); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("A corrente de ideias não para de entrar em sua cabeça..."); Console.ReadKey(); Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("\"Você deseja abrigo? Posso lhe dar. Junte se a nós. Dentre as sombras...\""); Console.ReadKey();
+                Console.WriteLine("\"Eu adoraria fazer mais por você. Mas meu poder segue esgotado, eis o preço de lutar contra o destino.\"");Console.ReadKey();
                 do{S3 = 0; Console.Clear(); Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\"O que você deseja?\""); 
                 Console.WriteLine("1 - Aceitar a maior piedade.");
                 switch (Valores.fé)
                 {
                     case < 2:
-                    Console.WriteLine("2 - *********************.");
+                    Console.WriteLine("2 - *********************. (Repetível)");
                     break;
                     
                     case >= 2:
                     Console.WriteLine("2 - Lutar contra o destino.");
                     break;
                 }
+                Console.WriteLine("3 - Seu plano (Repetível) \n4 - Exílio (Repetível)");
                 switch(Console.ReadLine())
                 {case "1":
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -300,9 +457,10 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
 
                 else if (Valores.fé == 2)
                 {Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine("\"Você deseja lutar contra o destino?\"");Console.ReadKey(); Console.Clear();
+                Console.WriteLine("\"Você? Deseja lutar contra o destino?\"");Console.ReadKey(); Console.Clear();
                 Console.WriteLine("\"É impossível. A NOSSA natureza é definida no momento em que NÓS nascemos...\"");Console.ReadKey();
                 Console.WriteLine("\"A não ser claro, que você queira tomar meu lugar?\"");Console.ReadKey();
+                Console.WriteLine("\"Isso será provavelmente irreversível, mas eu lutarei, até que encontre uma forma de lhe trazer descanso.\"");Console.ReadKey();
                 Console.WriteLine("\"Pois bem...\"");Console.ReadKey(); Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("A figura dentro da luz desaparece em penas negras...");Console.ReadKey();
                 Console.WriteLine("A estrela outrora brilhante e púrpura se abre como um abraço ardente...");Console.ReadKey();
@@ -318,6 +476,24 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("Uma última ideia ecoa na sua cabeça...");
                 Console.WriteLine("\"Abyssa\", esse poder ancestral deve ser útil um dia..."); Console.ReadKey();
                 Environment.Exit(0);}
+                break;
+                
+                case "3":
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("\"Você deseja saber meu plano?\""); Console.ReadKey();
+                Console.WriteLine("\"Pois bem, ao menos isso eu devo providenciar.\""); Console.ReadKey();
+                Console.WriteLine("\"Eu irei apagar os meus atos passados e manter a causalidade do mundo.\"");
+                Console.WriteLine("\"Desta forma, meu povo não irá sofrer mais do exílio.\""); Console.ReadKey();
+                Console.WriteLine("\"No entanto, eu ainda busco uma forma de manter este lugar vivo e protegido de Ambições enquanto eu executo o plano e novamente confronto os Servos da Ordem.\""); Console.ReadKey();
+                break;
+
+                case "4":
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("\"O Exílio...\"");
+                Console.WriteLine("\"Ele foi o dia em que eu decidi lutar contra a injustiça dos Servos da Ordem.\""); Console.ReadKey();
+                Console.WriteLine("\"A Ordem recompensava os diligentes, mas nada provia àqueles que não conseguiam ou não queriam mais lutar.\""); Console.ReadKey();
+                Console.WriteLine("\"Eu tomei a escolha de cuidar deles, abraçá-los em minhas asas como a noite, e espalhar canções que tragam conforto.\""); Console.ReadKey();
+                Console.WriteLine("\"Basta dizer que os Servos da Ordem foram contra, e exilaram nos em um vazio, do qual eu e minha irmã criamos o Abismo.\""); Console.ReadKey();
                 break;
 
                 default:
@@ -352,7 +528,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 do{S2 = 2;
                 Console.WriteLine("Uma grande sala de pedra com duas tochas está perante você. A bruxa desaparece antes que você possa ver e livros permeam a sala.");
                 Console.WriteLine("\t\tO que você deseja fazer?");
-                Console.WriteLine("1 - Olhar os livros da direita\n2 - Olhar os livros da esquerda\n3 - Examinar as tochas\n4 - Status\n5 - Conhecimento");
+                Console.WriteLine("1 - Olhar os livros da direita (Repetível)\n2 - Olhar os livros da esquerda (Repetível)\n3 - Examinar as tochas\n4 - Status\n5 - Conhecimento");
                 switch(Console.ReadLine())
                                 {
                                     case "1": //livros direita
@@ -510,13 +686,13 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 Console.WriteLine("As várias imagens te encaram pelas paredes. O que você deseja fazer?");
                 switch (Valores.olho)
                 {case false:
-                Console.WriteLine("1 - Janelas.");
+                Console.WriteLine("1 - Janelas. (Repetível)");
                 break;
                 
                 case true:
-                Console.WriteLine("1 - Passagens.");
+                Console.WriteLine("1 - Passagens. (Repetível)");
                 break;}
-                Console.WriteLine("2 - Subir as escadas."); Console.WriteLine("3 - Status."); Console.WriteLine("4 - Conhecimentos.");
+                Console.WriteLine("2 - Subir as escadas. (Repetível)"); Console.WriteLine("3 - Status."); Console.WriteLine("4 - Conhecimentos.");
                 switch (Console.ReadLine())
                 {
                     case "1": //passagens primeiro andar
@@ -625,13 +801,13 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                     Console.WriteLine("De qualquer forma, o que você deseja fazer?");
                     switch (Valores.olho)
                     {case false:
-                    Console.WriteLine("1 - Janelas.");
+                    Console.WriteLine("1 - Janelas. (Repetível)");
                     break;
                 
                     case true:
-                    Console.WriteLine("1 - Passagens.");
+                    Console.WriteLine("1 - Passagens. (Repetível)");
                     break;}
-                    Console.WriteLine("2 - Subir as escadas"); Console.WriteLine("3 - Descer as escadas"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                    Console.WriteLine("2 - Subir as escadas (Repetível)"); Console.WriteLine("3 - Descer as escadas (Repetível)"); Console.WriteLine("4 - Examinar a mesa"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                     switch (Console.ReadLine())
                         {
                             case "1": //passagens segundo andar
@@ -724,7 +900,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                             Console.WriteLine("Uma cortina circular roxa paira de um teto invisível no centro da biblioteca, se estendendo para cima até você não enxergar mais...");
                             Console.WriteLine("Dois corredores se extendem para lados opostos da sala, que de alguma forma retém o cheiro de livros novos");
                             Console.WriteLine("O que você busca?");
-                            Console.WriteLine("1 - Cortina"); Console.WriteLine("2 - Direita"); Console.WriteLine("3 - Esquerda"); Console.WriteLine("4 - Descer as escadas"); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
+                            Console.WriteLine("1 - Cortina (Repetível)"); Console.WriteLine("2 - Direita (Repetível)"); Console.WriteLine("3 - Esquerda (Repetível)"); Console.WriteLine("4 - Descer as escadas (Repetível) "); Console.WriteLine("5 - Status"); Console.WriteLine("6 - Conhecimentos");
                             switch(Console.ReadLine())
                                 {
                                     case "1":
@@ -839,7 +1015,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                                     Console.WriteLine("\"Final S:Cinzas à cinzas.\"");
                                                     Console.WriteLine("\"Mas seria esse mesmo um final feliz?\""); Console.ReadKey();
                                                     Console.WriteLine("\"Um último pensamento passa pela minha cabeça...\""); Console.ReadKey();
-                                                    Console.WriteLine("\"Cinis, esta autoridade deve ser útil um dia.\""); Console.ReadKey();
+                                                    Console.WriteLine("\"Cinis, esta autoridade ancestral deve ser útil um dia.\""); Console.ReadKey();
                                                     Environment.Exit(0);
                                                     break;
                                                 }
@@ -871,7 +1047,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                     Console.WriteLine("Você sente um leve cheiro de álcool etílico vindo do outro lado"); Console.ReadKey();
                                         do {S3 = 1; Console.Clear();
                                         Console.WriteLine("Ao entrar na sala você vê várias ferramentas, anotações, e diagramas");
-                                        Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status");
+                                        Console.WriteLine("O que você deseja fazer?"); Console.WriteLine("1 - Mesa"); Console.WriteLine("2 - Notas (Repetível)"); Console.WriteLine("3 - Retornar"); Console.WriteLine("4 - Status");
                                         switch(Console.ReadLine())
                                         {
                                             case "1": //mesa
@@ -879,7 +1055,7 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                                             Console.WriteLine("Você fica diante de uma mesa metálica surpreendentemente organizada."); Console.ReadKey();
                                             Console.WriteLine("Na parede acima dela há um tipo de diagrama.");
                                             Console.WriteLine("Enquanto algum tipo de mecanismo está diante de você, com ferramentas cirúrgicas ao lado.");
-                                            Console.WriteLine("O que eu devo fazer?"); Console.WriteLine("1 - Olhar o diagrama"); Console.WriteLine("2 - Fazer cirurgia"); Console.WriteLine("3 - Retornar");
+                                            Console.WriteLine("O que eu devo fazer?"); Console.WriteLine("1 - Olhar o diagrama (Repetível)"); Console.WriteLine("2 - Fazer cirurgia"); Console.WriteLine("3 - Retornar");
                                             switch(Console.ReadLine())
                                             {
                                                 case "1": //diagrama
@@ -1245,7 +1421,9 @@ List<int> pontostats = Valores.pontostats; int S = 2; //valores que serão usado
                 break;
 
                 case "2":
-                Console.WriteLine("WIP"); //caminho do hubris\
+                Console.WriteLine("Você decide seguir mais fundo na Floresta, seguindo o conselho das árvores.");
+                Console.WriteLine("\"Mais fundo... Mais fundo.../ A Floresta irá prover... / Aceite as bençãos do REI.\"");
+                Console.WriteLine("Enquanto você continua andando, levemente desorientado pela Floresta, você começa a sentir fome...");
                 break;
 
                 case "3":
